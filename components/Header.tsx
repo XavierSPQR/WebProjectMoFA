@@ -13,20 +13,29 @@ const notoSansTamil = Noto_Sans_Tamil({
 
 const Header = () => {
   return (
-    <header className="bg-[#6D6D6D] text-white p-4 flex items-center justify-between">
-      <div className="w-24 h-24 bg-gray-300">
-        {/* Placeholder for the left logo */}
+    <header className="bg-[#9DD9D2] text-gray-900 p-4 flex items-center justify-between">
+      <div className="w-24 h-24 bg-white/70 flex items-center justify-center">
+        {/* Left logo */}
       </div>
+
       <div className="text-center">
-        <h1 className={`text-2xl ${abhayaLibre.className}`}>විදේශ කටයුතු , විදේශ රැකියා සහ සංචාරක අමාත්‍යාංශය</h1>
-        <h2 className={`text-lg ${notoSansTamil.className}`}>வெளிநாட்டு அலுவல்கள், வெளிநாட்டு வேலைவாய்ப்பு மற்றும் சுற்றுலாத்துறை அமைச்சு</h2>
-        <h3 className="text-xl font-bold">Ministry of Foreign Affairs, Foreign Employment & Tourism</h3>
+        <h1 className={`text-2xl ${abhayaLibre.className}`}>
+          විදේශ කටයුතු , විදේශ රැකියා සහ සංචාරක අමාත්‍යාංශය
+        </h1>
+        <h2 className={`text-lg ${notoSansTamil.className}`}>
+          வெளிநாட்டு அலுவல்கள், வெளிநாட்டு வேலைவாய்ப்பு மற்றும் சுற்றுலாத்துறை அமைச்சு
+        </h2>
+        <h3 className="text-xl font-bold">
+          Ministry of Foreign Affairs, Foreign Employment & Tourism
+        </h3>
       </div>
-      <div className="w-24 h-24 bg-gray-300">
-        {/* Placeholder for the right logo */}
+
+      <div className="w-24 h-24 bg-white/70 flex items-center justify-center">
+        {/* Right logo */}
       </div>
     </header>
   );
 };
 
 export default Header;
+
