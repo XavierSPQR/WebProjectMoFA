@@ -36,15 +36,18 @@ During the visit, Prime Minister Turnbull and Prime Minister Ranil Wickremesingh
 This has benefited generations of students and has enabled Sri Lanka to succeed in achieving the Millennium Development Goal of Universal Primary Education.</p>,
       side: "right"
     },
-
-    
-    
-    
+    {
+      year: "1948",
+      title: "Sri Lanka (Ceylon) gains Independence",
+      image: "/assets/1948.jpg",
+      description: <p>On February 4, 1948, Ceylon was granted independence as the Dominion of Ceylon. Dominion status within the British Commonwealth was retained for the next 24 years until May 22, 1972 when it became a republic and was renamed the Republic of Sri Lanka.</p>,
+      side:"left"
+    },
     
     {
       year: "1948",
       title: "Diplomatic Relations With India",
-      image: "/assets/1948-img-1.png",
+      image: "/assets/1948 img 1.png",
       description: "Diplomatic Relations with the Republic of India established in 1948.",
       side: "right"
     },
@@ -61,7 +64,337 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
       image: "/assets/1948-img-3.png",
       description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
       side: "right"
-    }
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948 img 4.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With Turkey",
+      image: "/assets/1948 img 5.png",
+      description: "Diplomatic Relations with the Republic of Turkey established.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Opening of the High Commission of Sri Lanka in London, United Kingdom",
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Opening of the Embassy of Sri Lanka in Washington DC, USA.",
+      side: "right"
+    },
+    {
+      year: "1949",
+      title: "Diplomatic Relations With USA",
+      side: "left"
+    },
+    {
+      year: "1949",
+      title: "Diplomatic Relations with Myanmar",
+      image: "/assets/1949.png",
+      description: "Diplomatic Relations with the Republic of the Union of Myanmar established.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   ];
 
   const renderContent = () => {
