@@ -220,7 +220,7 @@ export default function Home() {
                   Tourism Information
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact-sl"
                   className="block bg-[#F4D06F] text-[#392F5A] p-3 hover:bg-yellow-400 transition-colors font-semibold"
                 >
                   Contact Us
@@ -281,7 +281,7 @@ export default function Home() {
                 Access consular services and support for Sri Lankan citizens
               </p>
               <Link
-                href="/contact"
+                href="/contact-sl"
                 className="inline-block mt-4 text-[#F4D06F] hover:underline font-semibold"
               >
                 Contact Us →

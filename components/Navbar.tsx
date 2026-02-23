@@ -40,7 +40,7 @@ const Navbar = () => {
           <Link href="/publication" className="text-white underline">Publication</Link>
         </li>
         <li className="mx-4">
-          <Link href="/contact" className="text-white underline">Contact SL</Link>
+          <Link href="/contact-sl" className="text-white underline">Contact SL</Link>
         </li>
         <li className="mx-4">
           <Link href="/downloads" className="text-white underline">Downloads</Link>
