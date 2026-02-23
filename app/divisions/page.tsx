@@ -23,7 +23,7 @@ const divisions = [
 ];
 
 const bilateralSubDivisions = [
-  'South Asia',
+  'Africa Affairs',
   'Middle East',
   'Africa',
   'Europe & North America',
