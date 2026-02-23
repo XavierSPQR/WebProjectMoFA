@@ -9,6 +9,39 @@ export default function Page() {
 
   const timelineData = [
     {
+      year: "1931",
+      title: "Universal Franchies ",
+      image: "/assets/1931.jpg",
+      description: <p>At the first election to the State Council of Ceylon (the unicameral legislature) in June 1931, the universal franchise was extended to all people, to elect 50 members to the legislature.
+Ceylon is regarded as the oldest democracy in Asia, with Universal Adult Franchise (right to vote) being extended to both men and women, before it’s independence, and before being extended in many other countries.
+.</p>,
+      side: "right"
+    },
+
+    {
+      year: "1945",
+      title: "Diplomatic Relations with Australia",
+      image: "/assets/1945.jpg",
+      description:<p>Australia and Sri Lanka have built a strong and enduring relationship since the establishment of diplomatic relations in 1947. May 2017 marked 70 years of diplomatic ties between Australia and Sri Lanka.
+Australia's Prime Minister Malcolm Turnbull visited Sri Lanka on 2 November 2017 and held productive discussions with President Maithripala Sirisena and Prime Minister Ranil Wickremesinghe. The visit coincided with the 70th anniversary of bilateral relations and were part of a series of high level visits between the two countries. Sri Lankan Prime Minister Ranil Wickremesinghe visited Australia from 13–17 February 2017 and President Maithrpala Sirisena undertook a State Visit to Australia from 24-26 May 2017.
+During the visit, Prime Minister Turnbull and Prime Minister Ranil Wickremesinghe witnessed the signing of a bilateral Trade and Investment Framework Arrangement, which would establish regular senior officials' talks to facilitate trade and investment. The Framework follows on from the Joint Declaration on Enhanced Cooperation signed during President Sirisena's visit to Australia in May 2017.</p>,
+      side: "left"
+    },
+
+    {
+      year: "1947",
+      title: "Free Education Policy in Sri Lanka",
+      image: "/assets/1947.png",
+      description:<p>October 1945, the Free Education Policy came into effect;  stating that every child above the age of 5 and not more than 16 is entitled to free education.
+This has benefited generations of students and has enabled Sri Lanka to succeed in achieving the Millennium Development Goal of Universal Primary Education.</p>,
+      side: "right"
+    },
+
+    
+    
+    
+    
+    {
       year: "1948",
       title: "Diplomatic Relations With India",
       image: "/assets/1948-img-1.png",
@@ -162,15 +195,7 @@ export default function Page() {
         <button className="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-3 px-6 rounded-md w-full transition-colors text-center cursor-pointer">
           Organizational Structure
         </button>
-        <button
-          onClick={() => {
-            setActiveTab('History');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-          className="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-3 px-6 rounded-md w-full transition-colors text-center cursor-pointer"
-        >
-          History
-        </button>
+        
       </div>
     </main>
   );
