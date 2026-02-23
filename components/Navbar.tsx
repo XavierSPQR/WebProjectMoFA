@@ -31,6 +31,11 @@ const Navbar = () => {
                 Guideline for Foreign Media
               </Link>
             </li>
+            <li className="p-2 hover:bg-white group/item">
+              <Link href="/contact-sl" className="text-white hover:text-navy no-underline block w-full">
+                Contact
+              </Link>
+            </li>
           </ul>
         </li>
         <li className="mx-4">
