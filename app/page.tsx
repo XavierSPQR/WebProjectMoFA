@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,7 +27,7 @@ export default function Home() {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [heroSlides.length]);
 
   const featuredNews = [
     {
@@ -147,7 +146,7 @@ export default function Home() {
                   The Republic Building
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  The historic Republic Building has housed the Foreign Ministry since 1948. Located in Colombo, this iconic building represents Sri Lanka's diplomatic heritage and continues to serve as the headquarters for the Ministry of Foreign Affairs, Foreign Employment and Tourism.
+                  The historic Republic Building has housed the Foreign Ministry since 1948. Located in Colombo, this iconic building represents Sri Lanka&apos;s diplomatic heritage and continues to serve as the headquarters for the Ministry of Foreign Affairs, Foreign Employment and Tourism.
                 </p>
                 <p className="text-gray-600 italic">
                   ඵෙතිහාසික ජනරජ ගොඩනැඟිල්ල 1948 වසරේ සිට විදේශ කටයුතු අමාත්‍යාංශයේ නිවහනයි.
@@ -255,7 +254,7 @@ export default function Home() {
             <div>
               <h3 className="text-2xl font-bold mb-3">Our Mission</h3>
               <p className="text-white/90">
-                To safeguard and promote Sri Lanka's interests abroad through effective diplomacy
+                To safeguard and promote Sri Lanka&apos;s interests abroad through effective diplomacy
               </p>
               <Link
                 href="/about"
