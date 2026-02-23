@@ -4,31 +4,52 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 
-const divisions = [
-  { path: 'bilateral-affairs', name: 'Bilateral Affairs' },
-  { path: 'multilateral-affairs', name: 'Multilateral Affairs' },
-  { path: 'economic-affairs', name: 'Economic Affairs' },
-  { path: 'protocols', name: 'Protocols' },
-  { path: 'consular-affairs', name: 'Consular Affairs' },
-  { path: 'legal', name: 'Legal' },
-  { path: 'ocean-affairs', name: 'Ocean Affairs, Environment and Climate Change' },
-  { path: 'performance-review', name: 'Performance Review and Implementation' },
-  { path: 'international-security', name: 'International Security Corporation' },
-  { path: 'hr-research-training', name: 'Human Resources Development, Research and Training' },
-  { path: 'hr-mission-management', name: 'HR and Mission Management' },
-  { path: 'overseas-assets', name: 'Overseas Asset Management and Development' },
-  { path: 'general-administration', name: 'General Administration' },
-  { path: 'finance', name: 'Finance' },
-  { path: 'internal-audit', name: 'Internal Audit and Investigation' },
-];
+/**
+ * DIVISIONS_DATA Content Map
+ *
+ * To add or update a division's description:
+ * 1. Find the division key (e.g., 'asia-affairs').
+ * 2. Update or add the 'description' field.
+ * 3. To add a new division, add a new key-value pair following the structure.
+ */
+const DIVISIONS_DATA: Record<string, {
+  name: string;
+  description?: string;
+  subDivisions?: Record<string, { name: string; description?: string }>;
+}> = {
+  'bilateral-affairs': {
+    name: 'Bilateral Affairs',
+    description: '',
+    subDivisions: {
+      'south-asia': { name: 'South Asia', description: '' },
+      'middle-east': { name: 'Middle East', description: '' },
+      'africa': { name: 'Africa', description: '' },
+      'europe-north-america': { name: 'Europe & North America', description: '' },
+      'east-asia-pacific': { name: 'East Asia & Pacific', description: '' },
+    }
+  },
+  'multilateral-affairs': { name: 'Multilateral Affairs', description: '' },
+  'economic-affairs': { name: 'Economic Affairs', description: '' },
+  'protocols': { name: 'Protocols', description: '' },
+  'consular-affairs': { name: 'Consular Affairs', description: '' },
+  'legal': { name: 'Legal', description: '' },
+  'ocean-affairs': { name: 'Ocean Affairs, Environment and Climate Change', description: '' },
+  'performance-review': { name: 'Performance Review and Implementation', description: '' },
+  'international-security': { name: 'International Security Corporation', description: '' },
+  'hr-research-training': { name: 'Human Resources Development, Research and Training', description: '' },
+  'hr-mission-management': { name: 'HR and Mission Management', description: '' },
+  'overseas-assets': { name: 'Overseas Asset Management and Development', description: '' },
+  'general-administration': { name: 'General Administration', description: '' },
+  'finance': { name: 'Finance', description: '' },
+  'internal-audit': { name: 'Internal Audit and Investigation', description: '' },
+};
 
-const bilateralSubDivisions = [
-  'South Asia',
-  'Middle East',
-  'Africa',
-  'Europe & North America',
-  'East Asia & Pacific'
-];
+const divisions = Object.keys(DIVISIONS_DATA).map(key => ({
+  path: key,
+  name: DIVISIONS_DATA[key].name
+}));
+
+const bilateralSubDivisions = Object.keys(DIVISIONS_DATA['bilateral-affairs'].subDivisions || {});
 
 export default function DivisionsPage() {
   const [selectedDivision, setSelectedDivision] = useState(divisions[0]);
@@ -46,6 +67,12 @@ export default function DivisionsPage() {
     setSelectedDivision(divisions[0]); // Ensure Bilateral Affairs is the active main division
     setSelectedSubDivision(sub);
   };
+
+  const currentDescription = selectedDivision.path === 'bilateral-affairs'
+    ? DIVISIONS_DATA['bilateral-affairs'].subDivisions?.[selectedSubDivision]?.description
+    : DIVISIONS_DATA[selectedDivision.path]?.description;
+
+  const displayDescription = currentDescription || 'Detailed information for this section is currently being updated.';
 
   return (
     <main className="flex-grow p-8 container mx-auto">
@@ -91,7 +118,7 @@ export default function DivisionsPage() {
                             : 'text-gray-600 hover:bg-gray-200 hover:text-navy'
                         }`}
                       >
-                        {sub}
+                        {DIVISIONS_DATA['bilateral-affairs'].subDivisions?.[sub]?.name || sub}
                       </button>
                     ))}
                   </div>
@@ -116,7 +143,7 @@ export default function DivisionsPage() {
                       : 'border-transparent text-gray-500 hover:text-navy hover:bg-gray-50'
                   }`}
                 >
-                  {sub}
+                  {DIVISIONS_DATA['bilateral-affairs'].subDivisions?.[sub]?.name || sub}
                 </button>
               ))}
             </div>
@@ -124,15 +151,15 @@ export default function DivisionsPage() {
 
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-navy border-b-4 border-yellow inline-block mb-2">
-              {selectedDivision.path === 'bilateral-affairs' ? selectedSubDivision : selectedDivision.name}
+              {selectedDivision.path === 'bilateral-affairs'
+                ? DIVISIONS_DATA['bilateral-affairs'].subDivisions?.[selectedSubDivision]?.name || selectedSubDivision
+                : selectedDivision.name}
             </h1>
           </div>
 
           <div className="bg-white p-10 rounded shadow-md border border-gray-100 min-h-[400px]">
-            <p className="text-gray-700 text-lg italic">
-              {selectedDivision.path === 'bilateral-affairs'
-                ? 'Information for this region will be updated soon.'
-                : 'Detailed information for this division will be updated soon.'}
+            <p className="text-gray-700 text-lg italic whitespace-pre-line">
+              {displayDescription}
             </p>
           </div>
         </section>
