@@ -79,15 +79,21 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
         );
       case 'Vision':
         return (
-          <p>
-            A professional, dedicated and innovative diplomatic service that proactively promotes Sri Lanka&apos;s interests globally.
-          </p>
+          <div className="flex flex-col items-center justify-center text-center py-12 space-y-6">
+            <h2 className="text-4xl font-bold text-[#2B6CB0]">Vision</h2>
+            <p className="text-[#2B6CB0] text-2xl max-w-3xl leading-relaxed">
+              To be a responsible nation within the international community and to maintain friendly relations with all countries.
+            </p>
+          </div>
         );
       case 'Mission':
         return (
-          <p>
-            To safeguard and promote Sri Lanka&apos;s interests abroad through effective diplomacy
-          </p>
+          <div className="flex flex-col items-center justify-center text-center py-12 space-y-6">
+            <h2 className="text-4xl font-bold text-[#2B6CB0]">Mission</h2>
+            <p className="text-[#2B6CB0] text-2xl max-w-4xl leading-relaxed">
+              The promotion, projection, and protection of Sri Lanka&apos;s national interests internationally, in accordance with the foreign policy of the Government and to advise the Government on managing foreign relations in keeping with Sri Lanka&apos;s national interests.
+            </p>
+          </div>
         );
       case 'History':
         return (
@@ -174,7 +180,7 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
       </div>
 
       {/* Content Container */}
-      <div className={`${activeTab === 'History' ? 'bg-white' : 'bg-teal-100'} rounded-3xl p-8 text-lg leading-relaxed shadow-sm min-h-[200px]`}>
+      <div className={`${activeTab === 'Overview' ? 'bg-teal-100' : 'bg-white'} rounded-3xl p-8 text-lg leading-relaxed shadow-sm min-h-[200px]`}>
         {renderContent()}
       </div>
 

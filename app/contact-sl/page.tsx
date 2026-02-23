@@ -116,6 +116,30 @@ export default function ContactSLPage() {
              </form>
           </div>
         </div>
+
+        {/* Get in Touch Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mb-8 mt-12">
+          {/* Column 1 */}
+          <div className="bg-gray-200 p-6 rounded shadow-sm">
+            <h3 className="font-bold text-base mb-4">Get in Touch</h3>
+            <ul className="space-y-1">
+              <li className="text-xs">Facebook</li>
+              <li className="text-xs">Email</li>
+              <li className="text-xs">Youtube</li>
+              <li className="text-xs">LinkedIn</li>
+            </ul>
+          </div>
+
+          {/* Column 2 */}
+          <div className="bg-gray-200 p-6 rounded shadow-sm">
+            <h3 className="font-bold text-base mb-4 text-nowrap">Get in touch</h3>
+            <ul className="space-y-1">
+              <li className="text-xs font-medium">+94 12345678</li>
+              <li className="text-xs font-medium">ForeignAff.lk</li>
+              <li className="text-xs font-medium">Main Street, Colombo</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </main>
   );

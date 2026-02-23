@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 
 const divisions = [
@@ -19,32 +22,52 @@ const divisions = [
 ];
 
 export default function DivisionsPage() {
+  const [selectedDivision, setSelectedDivision] = useState(divisions[0]);
+
   return (
     <main className="flex-grow p-8 container mx-auto">
-       <nav className="mb-6 text-sm">
+      {/* Breadcrumbs */}
+      <nav className="mb-6 text-sm">
         <Link href="/" className="text-gray-500 hover:underline">Home</Link>
-        <span className="mx-2">/</span>
+        <span className="mx-2 text-gray-400">/</span>
         <span className="text-gray-500">Divisions</span>
       </nav>
-      <h1 className="text-3xl font-bold text-navy mb-8 border-b-4 border-yellow inline-block">Divisions</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {divisions.map((division) => (
-          <Link
-            key={division.path}
-            href={`/divisions/${division.path}`}
-            className="block group"
-          >
-            <div className="bg-white p-6 rounded shadow-sm border border-gray-100 h-full flex flex-col justify-between transition-shadow duration-300 hover:shadow-md relative">
-              <h2 className="text-xl font-semibold text-navy group-hover:text-blue-800 transition-colors pr-6">
+      <div className="flex flex-col md:flex-row gap-8">
+        {/* Left Sidebar (1/4 width) */}
+        <aside className="w-full md:w-1/4">
+          <h2 className="text-xl font-bold text-navy mb-4 border-b-2 border-yellow inline-block">Divisions</h2>
+          <nav className="flex flex-col gap-1">
+            {divisions.map((division) => (
+              <button
+                key={division.path}
+                onClick={() => setSelectedDivision(division)}
+                className={`text-left px-4 py-3 rounded-md transition-all duration-200 cursor-pointer ${
+                  selectedDivision.path === division.path
+                    ? 'bg-navy text-yellow font-bold shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 hover:text-navy'
+                }`}
+              >
                 {division.name}
-              </h2>
-              <div className="absolute bottom-4 right-4 text-yellow text-2xl font-bold">
-                +
-              </div>
-            </div>
-          </Link>
-        ))}
+              </button>
+            ))}
+          </nav>
+        </aside>
+
+        {/* Content Area (3/4 width) */}
+        <section className="w-full md:w-3/4">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-navy border-b-4 border-yellow inline-block mb-2">
+              {selectedDivision.name}
+            </h1>
+          </div>
+
+          <div className="bg-white p-10 rounded shadow-md border border-gray-100 min-h-[400px]">
+            <p className="text-gray-700 text-lg italic">
+              Detailed information for this division will be updated soon.
+            </p>
+          </div>
+        </section>
       </div>
     </main>
   );
