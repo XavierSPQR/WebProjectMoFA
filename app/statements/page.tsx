@@ -74,7 +74,6 @@ const STATEMENTS_MAP: Record<string, any> = {
       </div>
     )
   },
-  // Default placeholders for others
   'minister': <p className="italic text-slate-500">Latest statements from the Hon. Minister are being indexed.</p>,
   'deputy-minister': <p className="italic text-slate-500">Latest statements from the Hon. Deputy Minister are being indexed.</p>,
   'secretary': <p className="italic text-slate-500">Press briefings and administrative statements from the Foreign Secretary.</p>,
@@ -101,8 +100,7 @@ export default function StatementsPage() {
 
   return (
     <main className="flex-grow p-6 md:p-10 container mx-auto bg-[#fdfdfd]">
-      {/* Breadcrumb */}
-      <nav className="mb-8 text-sm flex items-center gap-2 text-slate-400">
+      <nav className="mb-8 text-12px flex items-center gap-2 text-slate-400">
         <Link href="/" className="hover:text-navy transition-colors">Home</Link>
         <ChevronRight size={14} />
         <span className="text-navy font-semibold">Media & Statements</span>
@@ -124,19 +122,20 @@ export default function StatementsPage() {
                   <div key={cat.id} className="flex flex-col">
                     <button
                       onClick={() => handleCategoryClick(cat)}
-                      className={`w-full flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all duration-200 group ${
+                      className={`w-full flex items-center justify-between px-4 py-4 rounded-2xl transition-all duration-200 group ${
                         selectedCat.id === cat.id
                           ? 'bg-blue-50 text-navy font-bold'
                           : 'text-slate-600 hover:bg-slate-50'
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <Icon size={18} className={selectedCat.id === cat.id ? 'text-navy' : 'text-slate-400'} />
-                        <span className="text-sm">{cat.name}</span>
+                        <Icon size={20} className={selectedCat.id === cat.id ? 'text-navy' : 'text-slate-400'} />
+                        {/* Increased font size to text-base */}
+                        <span className="text-base">{cat.name}</span>
                       </div>
                       {cat.id === 'mission' && (
                         <span className={`${isMissionExpanded ? 'rotate-180' : ''} transition-transform`}>
-                          <ChevronDown size={14} />
+                          <ChevronDown size={16} />
                         </span>
                       )}
                     </button>
@@ -150,10 +149,10 @@ export default function StatementsPage() {
                               setSelectedCat(cat);
                               setSelectedSubCat(sub);
                             }}
-                            className={`text-left px-3 py-2 text-xs rounded-lg transition-all ${
+                            className={`text-left px-3 py-2.5 rounded-lg transition-all ${
                               selectedCat.id === 'mission' && selectedSubCat === sub
-                                ? 'text-navy font-bold bg-slate-100'
-                                : 'text-slate-500 hover:text-navy'
+                                ? 'text-navy font-bold bg-slate-100 text-sm'
+                                : 'text-slate-500 hover:text-navy text-sm'
                             }`}
                           >
                             {sub}
