@@ -27,13 +27,7 @@ const downloadItems = [
 export default function DownloadsPage() {
   return (
     <main className="flex-grow p-8 container mx-auto">
-      <nav className="mb-6 text-sm">
-        <Link href="/" className="text-gray-500 hover:underline">
-          Home
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-500">Downloads</span>
-      </nav>
+    
       <h1 className="text-3xl font-bold text-navy mb-8 border-b-4 border-yellow inline-block">
         Downloads
       </h1>

@@ -2,46 +2,44 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import userImg from "../Assets/user.png";
 
 export default function Page() {
   const contacts = [
     {
       position: "Actg. Director General",
-      name: "Mr. Thushara Rodrigo   ",
+      name: "Mr. Thushara Rodrigo",
       email: "dgpd(at)mfa.gov.lk",
       phone: "+94 11 2 345678",
-      image: userImg,
+      image: "/assets/user.png", // path from public folder
     },
     {
       position: "Director",
-      name: "Mr. Chathura Weerasekara  ",
+      name: "Mr. Chathura Weerasekara",
       email: "chathura.weerasekara(at)mfa.gov.lk",
-      phone: " +94  112 473 944",
-      image: userImg,
+      phone: "+94 112 473 944",
+      image: "/assets/user.png",
     },
     {
       position: "Assistant Director",
-      name: "Ms. Arosha Kariyawasam  ",
+      name: "Ms. Arosha Kariyawasam",
       email: "arosha.kariyawasam(at)mfa.gov.lk",
       phone: "+94 112 473 946",
-      image: userImg,
+      image: "/assets/user.png",
     },
     {
       position: "Assistant Director",
-      name: "Mr. Maharoof Murshid ",
+      name: "Mr. Maharoof Murshid",
       email: "maharoof.murshid(at)mfa.gov.lk",
       phone: "+94 112 473 946",
-      image: userImg,
+      image: "/assets/user.png",
     },
     {
       position: "Head of Branch",
       name: "Ms. Sripathmini Konamalai",
       email: "publicity(at)mfa.gov.lk",
       phone: "+94 112 437 633",
-      image: userImg,
+      image: "/assets/user.png",
     },
-
   ];
 
   return (
@@ -81,9 +79,9 @@ export default function Page() {
       </div>
 
       {/* Contacts Section */}
-      <div className="bg-white rounded-[100px] p-16 w-full max-w-10xl shadow-sm flex flex-col md:flex-row justify-around items-center gap-12">
+      <div className="bg-white rounded-[100px] p-16 w-full max-w-10xl shadow-sm flex flex-col md:flex-row flex-wrap justify-around items-center gap-12">
         {contacts.map((contact, index) => (
-          <div key={index} className="flex flex-col items-center gap-4 text-center">
+          <div key={index} className="flex flex-col items-center gap-4 text-center max-w-[250px]">
 
             {/* Profile Image */}
             <div className="w-40 h-40 rounded-full overflow-hidden border-8 border-[#9DD9D2] flex items-center justify-center bg-[#9DD9D2]">
@@ -98,11 +96,11 @@ export default function Page() {
 
             {/* Contact Details */}
             <h3 className="text-2xl font-bold text-black">{contact.position}</h3>
-            <p className="text-black-600">{contact.name}</p>
-            <a href={`mailto:${contact.email}`} className="text-black-500 text-sm hover:underline">
+            <p className="text-gray-700">{contact.name}</p>
+            <a href={`mailto:${contact.email}`} className="text-gray-500 text-sm hover:underline">
               {contact.email}
             </a>
-            <a href={`tel:${contact.phone}`} className="text-black-500 text-sm hover:underline">
+            <a href={`tel:${contact.phone}`} className="text-gray-500 text-sm hover:underline">
               {contact.phone}
             </a>
 
