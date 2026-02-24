@@ -35,15 +35,31 @@ const bilateralSubDivisions = [
 const CONTENT_MAP: Record<string, any> = {
   'bilateral-affairs': {
     'Africa Affairs': (
-      <div className="space-y-4">
-        <p>The Africa Affairs Division deals with matters pertaining to relations with 54 countries in the African continent and the African Union (AU).
+      <div className="space-y-4 text-justify">
+        <p>
+          The Africa Affairs Division deals with matters pertaining to relations with 54 countries in the African continent and the African Union (AU).
+        </p>
 
-The Division is assigned with the task of following political and socio-economic developments as well as coordinating bilateral relations with these countries.
+        <p>
+          The Division is assigned with the task of following political and socio-economic developments as well as coordinating bilateral relations with these countries.
+        </p>
 
-It also directs Sri Lanka’s foreign policy with these countries in the political, economic, security, education and social spheres. Technical cooperation and development assistance, investment relations, tourism and cultural promotion through bilateral, regional and multilateral engagements are part of the responsibilities of the Division.
+        <p>
+          It also directs Sri Lanka’s foreign policy with these countries in the political, economic, security, education and social spheres. Technical cooperation and development assistance, investment relations, tourism and cultural promotion through bilateral, regional and multilateral engagements are part of the responsibilities of the Division.
+        </p>
 
-Sri Lanka has 6 resident Missions in the region. (Egypt, South Africa, Nigeria, Kenya, Seychelles, Ethiopia).</p>
-        
+        <p>
+          Sri Lanka has six resident Missions in the region:
+        </p>
+
+        <ul className="list-disc list-inside ml-4">
+          <li>Egypt</li>
+          <li>South Africa</li>
+          <li>Nigeria</li>
+          <li>Kenya</li>
+          <li>Seychelles</li>
+          <li>Ethiopia</li>
+        </ul>
       </div>
     ),
     'Middle East': (

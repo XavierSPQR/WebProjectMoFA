@@ -265,11 +265,7 @@ export default function StatementsPage() {
 
   return (
     <main className="flex-grow p-6 md:p-10 container mx-auto bg-[#fdfdfd]">
-      <nav className="mb-8 text-[12px] flex items-center gap-2 text-slate-400">
-        <Link href="/" className="hover:text-navy transition-colors">Home</Link>
-        <ChevronRight size={14} />
-        <span className="text-navy font-semibold">Media & Statements</span>
-      </nav>
+    
 
       <div className="flex flex-col lg:flex-row gap-10">
         <aside className="w-full lg:w-1/4">
@@ -299,7 +295,7 @@ export default function StatementsPage() {
                         <button
                           key={sub}
                           onClick={() => { setSelectedCat(cat); setSelectedSubCat(sub); }}
-                          className={`text-left px-3 py-2 text-sm rounded-lg ${selectedSubCat === sub ? 'text-navy font-bold bg-slate-100' : 'text-slate-500'}`}
+                          className={`text-left px-3 py-2 text-base rounded-lg ${selectedSubCat === sub ? 'text-navy font-bold bg-slate-100' : 'text-slate-500'}`}
                         >
                           {sub}
                         </button>
@@ -329,7 +325,7 @@ export default function StatementsPage() {
                     <div className="p-8">
                       <div className="flex flex-col md:flex-row justify-between gap-4 mb-4">
                         <h3 className="text-xl md:text-2xl font-bold text-navy leading-tight">{item.title}</h3>
-                        <div className="flex items-center gap-2 text-slate-400 bg-slate-50 px-3 py-1 rounded-full text-sm h-fit whitespace-nowrap">
+                        <div className="flex items-center gap-2 text-slate-400 bg-slate-50 px-3 py-1 rounded-full text-base h-fit whitespace-nowrap">
                           <Calendar size={14} /> {item.date}
                         </div>
                       </div>
@@ -342,7 +338,7 @@ export default function StatementsPage() {
                         </div>
                       </div>
 
-                      <button onClick={() => toggleExpand(item.id)} className="inline-flex items-center gap-2 text-navy font-bold hover:text-blue-700 transition-colors text-sm">
+                      <button onClick={() => toggleExpand(item.id)} className="inline-flex items-center gap-2 text-navy font-bold hover:text-blue-700 transition-colors text-base">
                         {isExpanded ? (<>Show Less <ChevronUp size={16} /></>) : (<>Read Full Statement <ChevronDown size={16} /></>)}
                       </button>
                     </div>
