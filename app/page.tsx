@@ -202,19 +202,19 @@ export default function Home() {
               </h3>
               <div className="space-y-2">
                 <Link
-                  href="/divisions/consular-services"
+                  href="/divisions?id=consular-affairs"
                   className="block bg-[#392F5A] text-white p-3 hover:bg-[#4a3f6a] transition-colors"
                 >
                   Consular Services
                 </Link>
                 <Link
-                  href="/divisions/foreign-employment"
+                  href="/public-diplomacy"
                   className="block bg-[#392F5A] text-white p-3 hover:bg-[#4a3f6a] transition-colors"
                 >
                   Foreign Employment
                 </Link>
                 <Link
-                  href="/divisions/tourism"
+                  href="/divisions"
                   className="block bg-[#392F5A] text-white p-3 hover:bg-[#4a3f6a] transition-colors"
                 >
                   Tourism Information
