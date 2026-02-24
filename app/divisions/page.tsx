@@ -24,22 +24,26 @@ const divisions = [
 
 const bilateralSubDivisions = [
   'Africa Affairs',
-  'Middle East',
-  'South Asia & SAARC',
+  'East Asia and Oceania',
   'Europe & North America',
-  'East Asia & Pacific'
+  'Latin Ameruca and Caribbean Division',
+  'Middle East',
+  'South Asia and SAARRC',
+  'Southeast Asia and Central Asia'
 ];
 
 const CONTENT_MAP: Record<string, any> = {
   'bilateral-affairs': {
     'Africa Affairs': (
       <div className="space-y-4">
-        <p>The Africa Affairs Division oversees Sri Lanka&apos;s diplomatic relations with 54 African nations. Its primary focus is on expanding Sri Lanka&apos;s diplomatic footprint and revitalizing ties through South-South cooperation.</p>
-        <ul className="list-disc ml-6 space-y-1">
-          <li>Strengthening political ties through the opening of new resident missions.</li>
-          <li>Promoting trade in tea, rubber, and value-added agricultural products.</li>
-          <li>Coordinating technical cooperation in the fields of healthcare and education.</li>
-        </ul>
+        <p>The Africa Affairs Division deals with matters pertaining to relations with 54 countries in the African continent and the African Union (AU).
+
+The Division is assigned with the task of following political and socio-economic developments as well as coordinating bilateral relations with these countries.
+
+It also directs Sri Lanka’s foreign policy with these countries in the political, economic, security, education and social spheres. Technical cooperation and development assistance, investment relations, tourism and cultural promotion through bilateral, regional and multilateral engagements are part of the responsibilities of the Division.
+
+Sri Lanka has 6 resident Missions in the region. (Egypt, South Africa, Nigeria, Kenya, Seychelles, Ethiopia).</p>
+        
       </div>
     ),
     'Middle East': (
@@ -260,11 +264,7 @@ export default function DivisionsPage() {
 
   return (
     <main className="flex-grow p-6 md:p-10 container mx-auto bg-[#fdfdfd]">
-      <nav className="mb-8 text-sm flex items-center gap-2 text-slate-400">
-        <Link href="/" className="hover:text-navy transition-colors">Home</Link>
-        <ChevronRight size={14} />
-        <span className="text-navy font-semibold">Divisions</span>
-      </nav>
+      
 
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Left Sidebar */}
