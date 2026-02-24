@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { ChevronDown, ChevronRight, Building2, Globe, ShieldCheck, Landmark, Briefcase, Anchor, Scale, Users, FileBarChart, HardHat, DollarSign, Search } from 'lucide-react';
 
 const divisions = [
@@ -234,10 +235,29 @@ const CONTENT_MAP: Record<string, any> = {
   ),
 };
 
-export default function DivisionsPage() {
+function DivisionsContent() {
+  const searchParams = useSearchParams();
   const [selectedDivision, setSelectedDivision] = useState(divisions[0]);
   const [isBilateralExpanded, setIsBilateralExpanded] = useState(true);
   const [selectedSubDivision, setSelectedSubDivision] = useState(bilateralSubDivisions[0]);
+
+  useEffect(() => {
+    const id = searchParams.get('id');
+    const sub = searchParams.get('sub');
+
+    if (id) {
+      const division = divisions.find(d => d.path === id);
+      if (division) {
+        setSelectedDivision(division);
+        if (id === 'bilateral-affairs' && sub) {
+          setIsBilateralExpanded(true);
+          if (bilateralSubDivisions.includes(sub)) {
+            setSelectedSubDivision(sub);
+          }
+        }
+      }
+    }
+  }, [searchParams]);
 
   const handleDivisionClick = (division: typeof divisions[0]) => {
     setSelectedDivision(division);
@@ -361,5 +381,13 @@ export default function DivisionsPage() {
         .bg-yellow { background-color: #FFCC00; }
       `}</style>
     </main>
+  );
+}
+
+export default function DivisionsPage() {
+  return (
+    <Suspense fallback={<div>Loading divisions...</div>}>
+      <DivisionsContent />
+    </Suspense>
   );
 }
