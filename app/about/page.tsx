@@ -1,7 +1,9 @@
+
 "use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Reusable Profile Card Component
 const ProfileCard = ({ title, isOpen, onClick, children }) => {
@@ -43,7 +45,7 @@ const AdditionalSecCard = ({ area, name, tel, fax, email, role = "Additional Sec
   </div>
 );
 
-// Reusable Contact Item Component for Deputy Minister sections
+// Reusable Contact Item Component
 const ContactItem = ({ role, name, tel, mob, fax, email }) => (
   <div className="flex flex-col items-center text-center p-4">
     <div className="bg-white/20 rounded-full p-2 mb-2">
@@ -76,16 +78,11 @@ export default function Page() {
             <p className="mb-4">
               The Ministry of Foreign Affairs, Foreign Employment and Tourism
               coordinates and carries out the foreign policy of the Government
-              of Sri Lanka. The Ministry consists of the Ministry headquarters
-              in Colombo and Sri Lanka Missions abroad.
+              of Sri Lanka.
             </p>
             <p>
               The Ministry was formally established in 1948 following the
-              independence of Ceylon as the Ministry of External Affairs and
-              Defence. In 1977, the government divided the ministry in two,
-              forming the Ministry of Defence and the Ministry of Foreign
-              Affairs. A.C.S Hameed was appointed as the first Minister of
-              Foreign Affairs on 4 February 1978.
+              independence of Ceylon.
             </p>
           </>
         );
@@ -94,8 +91,7 @@ export default function Page() {
           <div className="flex flex-col items-center justify-center text-center py-12 space-y-6">
             <h2 className="text-4xl font-bold text-[#2B6CB0]">Vision</h2>
             <p className="text-[#2B6CB0] text-2xl max-w-3xl leading-relaxed">
-              To be a responsible nation within the international community and
-              to maintain friendly relations with all countries.
+              To be a responsible nation within the international community.
             </p>
           </div>
         );
@@ -104,9 +100,7 @@ export default function Page() {
           <div className="flex flex-col items-center justify-center text-center py-12 space-y-6">
             <h2 className="text-4xl font-bold text-[#2B6CB0]">Mission</h2>
             <p className="text-[#2B6CB0] text-2xl max-w-4xl leading-relaxed">
-              The promotion, projection, and protection of Sri Lanka's national
-              interests internationally, in accordance with the foreign policy
-              of the Government.
+              The promotion, projection, and protection of Sri Lanka's national interests.
             </p>
           </div>
         );
@@ -161,146 +155,114 @@ export default function Page() {
                     <h3 className="text-xl font-semibold text-blue-200">Hon. Vijitha Herath, MP</h3>
                     <p className="text-sm font-bold uppercase tracking-wide mt-1">Minister of Foreign Affairs, Foreign Employment & Tourism</p>
                 </div>
-                <div className="w-full max-w-[300px] aspect-[4/3] relative border-4 border-white overflow-hidden shadow-lg">
-                   <img src="/images/vijitha-herath.jpg" alt="Hon. Vijitha Herath" className="object-cover w-full h-full" />
+                <div className="relative w-full max-w-[300px] aspect-[4/3] border-4 border-white overflow-hidden shadow-lg">
+                  <Image
+                    src="/minister.jpg"
+                    alt="Hon. Vijitha Herath"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="md:w-2/3 space-y-4 text-sm md:text-base leading-relaxed">
                 <p>Vijitha Herath was sworn in as the Minister of Foreign Affairs, Foreign Employment, and Tourism on 18 November 2024.</p>
+
                 <p>A seasoned politician, Minister Herath has been serving as a Member of the Sri Lanka Parliament for the Gampaha District since 2000. At the 2024 General Election, he was re-elected with the highest number of preferential votes ever recorded in history.</p>
+
                 <p>He plays a key leadership role in the National People's Power (NPP) movement. Previously, he served as the Minister of Cultural Affairs and National Heritage (2004-2005).</p>
-                <p>He holds a bachelor's degree in science from the University of Kelaniya. In his 26-year career, he has remained a committed advocate for democratic governance and anti-corruption.</p>
-              </div>
+
+                <p>He holds a bachelor's degree in science from the University of Kelaniya. In his 26-year career, he has remained a committed advocate for democratic governance and anti-corruption.</p>              </div>
             </div>
           </ProfileCard>
 
-          {/* Secretary Profile - UPDATED TO MATCH MINISTER LAYOUT */}
+          {/* Secretary Profile */}
           <ProfileCard title="Secretary" isOpen={expandedProfile === "Secretary"} onClick={() => toggleProfile("Secretary")}>
             <div className="bg-[#1a4a6e] text-white p-6 md:p-10 rounded-lg flex flex-col md:flex-row gap-8">
               <div className="md:w-1/3 flex flex-col items-center">
                 <div className="text-center mb-6">
                     <h3 className="text-xl font-semibold text-blue-200">Ms. Aruni Ranaraja</h3>
-                    <p className="text-sm font-bold uppercase tracking-wide mt-1">Secretary, Ministry of Foreign Affairs, Foreign Employment and Tourism</p>
+                    <p className="text-sm font-bold uppercase tracking-wide mt-1">Secretary, Ministry of Foreign Affairs</p>
                 </div>
-                <div className="w-full max-w-[300px] aspect-[4/3] relative border-4 border-white overflow-hidden shadow-lg">
-                  <img src="/images/aruni-ranaraja.jpg" alt="Ms. Aruni Ranaraja" className="object-cover w-full h-full" />
+                <div className="relative w-full max-w-[300px] aspect-[4/3] border-4 border-white overflow-hidden shadow-lg">
+                  <Image
+                    src="/aruni-ranaraja.jpg"
+                    alt="Ms. Aruni Ranaraja"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div className="md:w-2/3 space-y-4 text-sm md:text-base leading-relaxed">
                 <p>Ms. Aruni Ranaraja joined the Sri Lanka Foreign Service in 1996. During her diplomatic career spanning twenty-eight years, she has served in several capacities both at the Ministry of Foreign Affairs and Sri Lanka Missions Abroad.</p>
-                <p>Prior to her appointment as Secretary, she was Additional Secretary & Chief of Protocol of the Ministry. She served as Ambassador of Sri Lanka to the Kingdom of the Netherlands (2021-2024) and Ambassador to the Philippines (2015-2019), where she was awarded the Order of Sikatuna, Grand Cross.</p>
-                <p>Her overseas assignments include Rome, Moscow, Bangkok, and Belgium. At headquarters, she has served as Director General for South Asia and SAARC, Africa, United Nations, Multilateral Affairs, and Consular Affairs.</p>
-                <p>Ms. Ranaraja holds a Master's and Bachelor's Degree in International Relations from the State University of Ukraine and a Postgraduate Diploma from BCIS, Colombo. She is fluent in English and Russian and understands Japanese.</p>
-              </div>
-            </div>
-          </ProfileCard>
 
-          {/* Additional Secretaries - UPDATED FROM ORGANIZATIONAL CHART */}
-          <ProfileCard title="Additional Secretaries" isOpen={expandedProfile === "AddSec"} onClick={() => toggleProfile("AddSec")}>
-            <div className="bg-[#1a4a6e] text-white p-6 md:p-8 rounded-lg">
-              <h3 className="text-center text-blue-200 font-bold text-xl mb-8 uppercase tracking-widest">Leadership Team & Areas of Responsibility</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <AdditionalSecCard 
-                  area="Ocean Affairs, Environment & Climate Change and Consular Affairs"
-                  name="Ms. S. Hasanthi Urugodawatte Dissanayake"
-                  email="hasanthi.dissanayake(at)mfa.gov.lk"
-                />
-                <AdditionalSecCard 
-                  area="UN & Human Rights, Latin America & Caribbean, Africa and Performance Review"
-                  name="Ms. H.S. De Silva Arunatilaka"
-                />
-                <AdditionalSecCard 
-                  area="Europe, North America, East Asia, Oceania, SE Asia, South Asia & Legal"
-                  name="Mr. M.R.K. Lenagala"
-                />
-                <AdditionalSecCard 
-                  area="SAARC"
-                  name="Ms. Dayani Mendis"
-                  role="Actg. Additional Secretary"
-                />
-                <AdditionalSecCard 
-                  area="Administration (General Administration Division)"
-                  name="Mr. H.A.V.P. Hapangama"
-                  tel="+94 112 328 026"
-                  fax="+94 112 327 019"
-                  email="addl.sec.admin(at)mfa.gov.lk"
-                />
-                <AdditionalSecCard 
-                  area="FINANCE (Finance Division, Internal Audit Division)"
-                  name="Mr. S.H. Fernando"
-                  role="Chief Financial Officer"
-                  tel=""
-                  fax="+94 113 144 477"
-                  email="cfo(at)mfa.gov.lk"
-                />
+                <p>Prior to her appointment as Secretary, she was Additional Secretary & Chief of Protocol of the Ministry. She served as Ambassador of Sri Lanka to the Kingdom of the Netherlands (2021-2024) and Ambassador to the Philippines (2015-2019), where she was awarded the Order of Sikatuna, Grand Cross.</p>
+
+                <p>Her overseas assignments include Rome, Moscow, Bangkok, and Belgium. At headquarters, she has served as Director General for South Asia and SAARC, Africa, United Nations, Multilateral Affairs, and Consular Affairs.</p>
+
+                <p>Ms. Ranaraja holds a Master's and Bachelor's Degree in International Relations from the State University of Ukraine and a Postgraduate Diploma from BCIS, Colombo. She is fluent in English and Russian and understands Japanese.</p>
+
               </div>
+              
             </div>
           </ProfileCard>
 
           {/* Deputy Minister FA Profile */}
-          <ProfileCard title="Deputy Minister of Foreign Affairs and Foreign Employment" isOpen={expandedProfile === "DeputyMinisterFA"} onClick={() => toggleProfile("DeputyMinisterFA")}>
-            <div className="space-y-2">
-              <div className="bg-[#1a4a6e] text-white p-6 md:p-10 rounded-t-lg flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/3 flex flex-col items-center">
-                  <div className="text-center mb-6">
-                      <h3 className="text-xl font-semibold text-blue-200">Hon. Arun Hemachandra, MP</h3>
-                      <p className="text-sm font-bold uppercase tracking-wide mt-1">Deputy Minister of Foreign Affairs & Foreign Employment</p>
-                  </div>
-                  <div className="w-full max-w-[300px] aspect-[4/3] relative border-4 border-white overflow-hidden shadow-lg">
-                    <img src="/images/arun-hemachandra.jpg" alt="Hon. Arun Hemachandra" className="object-cover w-full h-full" />
-                  </div>
+          <ProfileCard title="Deputy Minister of Foreign Affairs" isOpen={expandedProfile === "DeputyMinisterFA"} onClick={() => toggleProfile("DeputyMinisterFA")}>
+            <div className="bg-[#1a4a6e] text-white p-6 md:p-10 rounded-lg flex flex-col md:flex-row gap-8">
+              <div className="md:w-1/3 flex flex-col items-center">
+                <div className="text-center mb-6">
+                    <h3 className="text-xl font-semibold text-blue-200">Hon. Arun Hemachandra, MP</h3>
+                    <p className="text-sm font-bold uppercase tracking-wide mt-1">Deputy Minister</p>
                 </div>
-                <div className="md:w-2/3 space-y-4 text-sm md:text-base leading-relaxed">
-                  <p>Hon. Arun Hemachandra was sworn in on 21 November 2024 representing the Trincomalee District. He is a member of the NPP National Executive Committee and Chairman of the Trincomalee District Coordination Committee.</p>
-                  <p>He holds a BSc in Biology from Angeles University Foundation and an LLB from the University of London.</p>
+                <div className="relative w-full max-w-[300px] aspect-[4/3] border-4 border-white overflow-hidden shadow-lg">
+                  <Image
+                    src="/arun-hemachandra.jpg"
+                    alt="Hon. Arun Hemachandra"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
-              <div className="bg-[#1a4a6e] text-white p-6 rounded-b-lg border-t border-white/20">
-                <h3 className="text-center text-blue-200 font-bold text-xl mb-6">Points of Contact</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <ContactItem role="Private Secretary" name="Mr. B.W. Chathura Buddhika" tel="+94 112 473 539" mob="+94 777 130 779" fax="0112 454 264" email="chathura.buddhika(at)mfa.gov.lk" />
-                  <ContactItem role="Coordinating Secretary" name="Mr. A.M. Imran" tel="+94 112 473 539" fax="0112 454 264" email="am.imran(at)mfa.gov.lk" />
-                  <ContactItem role="Media Secretary" name="Ms. Sachintha Sathyangani" tel="+94 112 473 539" fax="0112 454 264" email="sathya.mediasec(at)mfa.gov.lk" />
-                  <ContactItem role="Director" name="Ms. Sewwandi De Silva" email="sewwandi.desilva(at)mfa.gov.lk" />
-                </div>
+              <div className="md:w-2/3 space-y-4 text-sm md:text-base leading-relaxed">
+                <p>Hon. Arun Hemachandra was sworn in on 21 November 2024 representing the Trincomalee District. He is a member of the NPP National Executive Committee and Chairman of the Trincomalee District Coordination Committee.</p>
+
+                  <p>He holds a BSc in Biology from Angeles University Foundation and an LLB from the University of London.</p>
               </div>
             </div>
           </ProfileCard>
 
           {/* Deputy Minister of Tourism Profile */}
           <ProfileCard title="Deputy Minister of Tourism" isOpen={expandedProfile === "DeputyMinisterTourism"} onClick={() => toggleProfile("DeputyMinisterTourism")}>
-            <div className="space-y-2">
-              <div className="bg-[#1a4a6e] text-white p-6 md:p-10 rounded-t-lg flex flex-col md:flex-row gap-8">
-                <div className="md:w-1/3 flex flex-col items-center">
-                  <div className="text-center mb-6">
-                      <h3 className="text-xl font-semibold text-blue-200">Hon. Prof. Ruwan Ranasinghe, MP</h3>
-                      <p className="text-sm font-bold uppercase tracking-wide mt-1">Deputy Minister of Tourism</p>
-                  </div>
-                  <div className="w-full max-w-[300px] aspect-[4/3] relative border-4 border-white overflow-hidden shadow-lg">
-                    <img src="/images/ruwan-ranasinghe.jpg" alt="Hon. Prof. Ruwan Ranasinghe" className="object-cover w-full h-full" />
-                  </div>
+            <div className="bg-[#1a4a6e] text-white p-6 md:p-10 rounded-lg flex flex-col md:flex-row gap-8">
+              <div className="md:w-1/3 flex flex-col items-center">
+                <div className="text-center mb-6">
+                    <h3 className="text-xl font-semibold text-blue-200">Hon. Prof. Ruwan Ranasinghe, MP</h3>
+                    <p className="text-sm font-bold uppercase tracking-wide mt-1">Deputy Minister</p>
                 </div>
-                <div className="md:w-2/3 space-y-4 text-sm md:text-base leading-relaxed">
-                  <p>Hon. Prof. Ruwan Ranasinghe assumed duties in 2024 representing the Badulla District. An academic by profession, he holds a PhD in Tourism Management and has served as a researcher and professor.</p>
+                <div className="relative w-full max-w-[300px] aspect-[4/3] border-4 border-white overflow-hidden shadow-lg">
+                  <Image
+                    src="/ruwan-ranasinghe.jpg"
+                    alt="Hon. Prof. Ruwan Ranasinghe"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
-              <div className="bg-[#1a4a6e] text-white p-6 rounded-b-lg border-t border-white/20">
-                <h3 className="text-center text-blue-200 font-bold text-xl mb-6">Points of Contact</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <ContactItem role="Personal Secretary" name="Mr. Sameera Kodithuwakku" mob="+94 772 324 926" email="e.sameera(at)gmail.com" />
-                  <ContactItem role="Media Secretary" name="Mr. Gayan Abeykoon" tel="+94 775 460 234" email="mediasec(at)tourismmin.gov.lk" />
-                  <ContactItem role="Coordinating Secretary" name="Mr. Indika Dissanayake" tel="+94 772 012 283" email="cosec(at)tourismmin.gov.lk" />
-                </div>
+              <div className="md:w-2/3 space-y-4 text-sm md:text-base leading-relaxed">
+                <p>Hon. Prof. Ruwan Ranasinghe assumed duties in 2024 representing the Badulla District. An academic by profession, he holds a PhD in Tourism Management and has served as a researcher and professor.</p>
               </div>
             </div>
           </ProfileCard>
         </div>
       </div>
-
       <div className="flex flex-col gap-4">
+
         <button className="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-3 px-6 rounded-md w-full transition-colors text-center cursor-pointer">
+
           Organizational Structure
+
         </button>
+
       </div>
     </main>
   );
