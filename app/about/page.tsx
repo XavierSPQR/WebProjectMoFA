@@ -102,6 +102,7 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
       side: "right"
     },
     {
+<<<<<<< HEAD
       year: "1949",
       title: "Opening of the Embassy of Sri Lanka in Rangoon, Myanmar.",
       side: "left"
@@ -454,6 +455,90 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
       title: "Opening of the High Commission of Sri Lanka in Singapore.g",
       side: "right"
     },
+=======
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With France",
+      image: "/assets/1948-img-3.png",
+      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      side: "right"
+    },
+    {
+      year: "1948",
+      title: "Diplomatic Relations With USA",
+      image: "/assets/1948-img-3.png",
+      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      side: "left"
+    },
+
+
+
+
+
+
+>>>>>>> 433dcb8b715eeccebcded8984257a4ed5693e235
 
 
 
