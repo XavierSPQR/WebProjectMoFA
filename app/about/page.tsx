@@ -102,88 +102,358 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1949",
+      title: "Opening of the Embassy of Sri Lanka in Rangoon, Myanmar.",
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1949",
+      title: "Diplomatic Relations with Sweden",
+      image: "/assets/1949 img 1.png",
+      description: "Diplomatic Relations with the Kingdom of Sweden established on 18 November 1949.",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1950",
+      title: "Colombo Commonwealth Conference on Foreign Affairs",
+      image: "/assets/1950.jpg",
+      description:<p>The Colombo Commonwealth Conference on Foreign Affairs held in January 1950, conceives of  “The Colombo Plan” (The Colombo Plan for Cooperative Economic Development in South and Southeast Asia), as a forum to cooperate on socio-economic development.</p> ,
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1950",
+      title: "Diplomatic Relations with Indonesia",
+      image: "/assets/1950 img 1.jpeg",
+      description: "Diplomatic Relations with the Republic of Indonesia established.",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1950",
+      title: "Diplomatic Relations with Norway",
+      image: "/assets/1950 img 2.png",
+      description:"Diplomatic Relations with the Kingdom of Norway established in October 1950.",
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1950",
+      title: "Opening of the High Commission of Sri Lanka in Islamabad, Pakistan.",
+      image: "/assets/1950 img 3.jpg",
+      description: "present day High Commission in Islamabad, opened on 22 February 1950.",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1951",
+      title: "The Colombo Plan launched",
+      image: "/assets/1951.png",
+      description:<p>The Colombo Plan launched on 1st July 1951.In 1977, after adopted a new constitution, its name was changed to “The Colombo Plan for Cooperative Economic and Social Development in Asia and the Pacific” to reflect the expanded composition of its enhanced membership and the scope of its activities, from its original 7 members.</p> ,
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1951",
+      title: "Free Health Policy in Sri Lanka",
+      image: "/assets/1951 img 1.jpg",
+      description: "The adoption of the Free Health Policy, comprising system of grass-root level workers including Public Health Midwives and Public Health Inspectors; National and Base hospitals around the country has enabled Sri Lanka to achieve the highest social development indicators in the region and most parts of the world.",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1952",
+      title: "Opening of the Embassy of Sri Lanka in Jakarta, Indonesia.",
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1952",
+      title: "Diplomatic Relations with Japan",
+      image: "/assets/1952.png",
+      description: "Diplomatic Relations with Japan established.",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1952",
+      title: "Diplomatic Relations with Italy",
+      image: "/assets/1952 img 2.png",
+      description: "Diplomatic Relations with the Italian Republic established.",
       side: "left"
     },
-
-
-
-
-
-
+    {
+      year: "1952",
+      title: "Opening of the Embassy of Sri Lanka in Rome, Italy.",
+      side: "right"
+    },
+    {
+      year: "1953",
+      title: "Diplomatic Relations with Belgium",
+      image: "/assets/1953.png",
+      description: "Diplomatic Relations with the Kingdom of Belgium established.",
+      side: "left"
+    },
+    {
+      year: "1953",
+      title: "Diplomatic Relations with Germany",
+      image: "/assets/1953 img1.png",
+      description: "Diplomatic Relations with the Federal Republic of Germany established on 9 December 1953.",
+      side: "right"
+    },
+    {
+      year: "1953",
+      title: "Opening of the Embassy of Sri Lanka in Tokyo, Japan.",
+      side: "left"
+    },
+    {
+      year: "1954",
+      title: "Colombo Powers Conference",
+      description: "The Colombo Powers conference hosted by Ceylon in Kandy from 28 April to 2 May 1954, is regarded as having provided the momentum to discuss Asian- African solidarity and lead to the 1955 Bandung Conference.",
+      side: "right"
+    },
+    {
+      year: "1955",
+      title: "Bandung Conference",
+      image: "/assets/1955.jpg",
+      description:"In April 1955, Sri Lanka (then Ceylon) with 29 countries from Africa and Asia, met in Bandung, Indonesia to discuss Afro-Asian solidarity and laid foundation for the Non-Aligned Movement (NAM).",
+      side: "left"
+    },
+    {
+      year: "1955",
+      title: "Sri Lanka joins the United Nations",
+      image: "/assets/1955 img 1.png",
+      description: "Sri Lanka, then Ceylon, obtained membership of the United Nations on 14 December 1955, along with nine other countries.Sir Senerat Gunawardena, Sri Lanka’s first Permanent Representative to the UN, hoists the national flag at the UN Headquarters in New York.",
+      side: "right"
+    },
+    {
+      year: "1955",
+      title: "Diplomatic Relations with Thailand",
+      image: "/assets/1955 img 2.png",
+      description:"Diplomatic Relations with the Kingdom of Thailand established in November 1955.",
+      side: "left"
+    },
+    {
+      year: "1956",
+      title: "Diplomatic Relations with Israel",
+      image: "/assets/1956.png",
+      description: "Diplomatic Relations with the State of Israel established on 1 June 1956.",
+      side: "right"
+    },
+    {
+      year: "1956",
+      title: "Ceylon’s Representative to the UN presents credentials",
+      image: "/assets/1956 img 2.jpg",
+      description:"Sir Senerat Gunewardene was appointed Ambassador to the United States in 1953 and served as the Government’s observer to the 1955 session of the United Nations General Assembly.In 1956 he presented credentials as the first Representative to the United Nations.",
+      side: "left"
+    },
+    {
+      year: "1956",
+      title: "Opening of the Embassy of Sri Lanka in Paris, France.",
+      side: "right"
+    },
+    {
+      year: "1956",
+      title: "First Statement made by Head of Government of Ceylon at UN",
+      image: "/assets/1956 img 3.jpg",
+      description:<p>Prime Minister, S. W. R. D. Bandaranaike was the first Head of Government of Sri Lanka to address the United Nations General Assembly.An excerpt from his speech at the 11th UN General Assembly: “My country is a small one, a weak one and a poor one, but I venture to think that today, particularly in an organization such as this, the service that a country can render – that a member can render – is not to be measured alone by the size of that country, its population, its power or its strength. This is an organization which expresses itself most effectively by bringing to bear a certain moral force, the collective moral force and decency of human beings”.</p> ,
+      side: "left"
+    },
+    {
+      year: "1957",
+      title: "Diplomatic Relations with China",
+      image: "/assets/1957.png",
+      description: "Diplomatic Relations with the People’s Republic of China established on 7 February 1957.",
+      side: "right"
+    },
+    {
+      year: "1957",
+      title: "Opening of the Embassy of Sri Lanka in Beijing, China",
+      side: "left"
+    },
+    {
+      year: "1957",
+      title: "Establishment of Diplomatic Relations with Egypt",
+      image: "/assets/1957 img 1.png",
+      description: "Establishment of Diplomatic Relations with Egypt",
+      side: "right"
+    },
+    {
+      year: "1957",
+      title: "Diplomatic Relations with Nepal",
+      image: "/assets/1957 img 2.png",
+      description:"Diplomatic Relations with the Kingdom of Nepal established on 1 July 1957. (In June 2017 Nepal became a Federal Democratic Republic).",
+      side: "left"
+    },
+    {
+      year: "1957",
+      title: "Opening of the Deputy High Commission of Sri Lanka in Chennai, India.",
+      side: "right"
+    },
+    {
+      year: "1957",
+      title: "Diplomatic Relations with Malaysia",
+      image: "/assets/1957 img 3.png",
+      description:"Diplomatic Relations with Malaysia established",
+      side: "left"
+    },
+    {
+      year: "1957",
+      title: "Establishment of Diplomatic Relations with Egypt",
+      image: "/assets/1957 img 4.png",
+      description: "Establishment of Diplomatic Relations with Egypt",
+      side: "right"
+    },
+    {
+      year: "1957",
+      title: "Opening of the High Commission of Sri Lanka in Kuala Lampur, Malaysia.",
+      side: "left"
+    },
+    {
+      year: "1957",
+      title: "Diplomatic Relations with the Soviet Union",
+      image: "/assets/1957 img 5.png",
+      description: "Diplomatic Relations with the Soviet Union established on 19 February 1957.",
+      side: "right"
+    },
+    {
+      year: "1957",
+      title: "Opening of the Embassy Sri Lanka in Moscow, Russia.",
+      side: "left"
+    },
+    {
+      year: "1958",
+      title: "Establishment of Diplomatic Relations with Canada",
+      image: "/assets/1958.png",
+      side: "right"
+    },
+    {
+      year: "1958",
+      title: "Opening of the High Commission of Sri Lanka in Ottawa, Canada.",
+      image: "/assets/1958 img 1.jpg",
+      side: "left"
+    },
+    {
+      year: "1958",
+      title: "Opening of the Embassy of Sri Lanka in Cairo, Egypt.",
+      side: "right"
+    },
+    {
+      year: "1958",
+      title: "Opening of the Embassy of Sri Lanka in Bonn, Germany.",
+      side: "left"
+    },
+    {
+      year: "1959",
+      title: "Diplomatic Relations with IndonesiaEstablishment of Diplomatic Relations with Cuba",
+      image: "/assets/1959.png",
+      description: "Establishment of Diplomatic Relations with Cuba",
+      side: "right"
+    },
+    {
+      year: "1960",
+      title: "World’s First Female Prime Minister",
+      image: "/assets/1960.jpg",
+      description:"Sirimavo Bandaranaike was elected as the world’s first female Prime Minister on 21 July 1960. She addressed the 26th session of the United Nations General Assembly in 1971.",
+      side: "left"
+    },
+    {
+      year: "1960",
+      title: "Sri Lanka (Ceylon) becomes a Member of the UN Security Council",
+      image: "/assets/1960 img 1.jpg",
+      description: "Ceylon was elected as a member of the United Nations Security Council in 1960.  Sir Claude Corea became the first-ever President of the United Nations Security Council from Ceylon in May 1960.",
+      side: "right"
+    },
+    {
+      year: "1960",
+      title: "Sri Lanka (Ceylon) first participated in a United Nations Peacekeeping mission",
+      image: "/assets/1960 img 2.jpg",
+      description:"Sri Lanka first contribution to a United Nations Peacekeeping mission in 1960, by deploying Six peacekeepers to the UN Mission in the Democratic Republic of Congo (MONUC).",
+      side: "left"
+    },
+    {
+      year: "1961",
+      title: "Establishment of Diplomatic Relations with Iran",
+      image: "/assets/1961.png",
+      description: "Diplomatic Relations with Iran",
+      side: "right"
+    },
+    {
+      year: "1961",
+      title: "Establishment of Diplomatic Relations with the Philippines",
+      image: "/assets/1961 img 1.png",
+      description:"Diplomatic Relations with the Philippines",
+      side: "left"
+    },
+    {
+      year: "1961",
+      title: "Opening of the Embassy of Sri Lanka in Manila, Philippines.",
+      side: "right"
+    },
+    {
+      year: "1962",
+      title: "Establishment of Diplomatic Relations with the European Commission",
+      image: "/assets/1962.png",
+      description:"Diplomatic Relations with the European Commission established.",
+      side: "left"
+    },
+    {
+      year: "1965",
+      title: "Establishment of Diplomatic Relations with the Maldives",
+      image: "/assets/1965.png",
+      description: "Diplomatic Relations with the Republic of Maldives established on 26 July 1956.",
+      side: "right"
+    },
+    {
+      year: "1965",
+      title: "Opening of the Permanent Mission to the UN in Geneva, Switzerland.",
+      side: "left"
+    },
+    {
+      year: "1966",
+      title: "Opening of the Embassy of Sri Lanka in Bangkok, Thailand.",
+      side: "right"
+    },
+    {
+      year: "1967",
+      title: "Visit of UN Secretary General U Thant to Sri Lanka",
+      image: "/assets/1967.jpg",
+      description:"The United Nations Compound in Colombo opened on 10 April 1967 by United Nations Secretary-General U Thant during his visit to Sri Lanka.",
+      side: "left"
+    },
+    {
+      year: "1968",
+      title: "Consulate opened in Sydney, Australia November 1968",
+      side: "right"
+    },
+    {
+      year: "1970",
+      title: "Establishment of Diplomatic Relations with Singapore",
+      image: "/assets/1970.png",
+      description:"Diplomatic Relations with the Republic of Singapore established on 27 July 1970.",
+      side: "left"
+    },
+    {
+      year: "1970",
+      title: "Opening of the Embassy of Sri Lanka in Stockholm, Sweden.",
+      side: "right"
+    },
+    {
+      year: "1970",
+      title: "Establishment of Diplomatic Relations with Kenya",
+      image: "/assets/1970 img 1.png",
+      description:"Diplomatic Relations with Kenya",
+      side: "left"
+    },
+    {
+      year: "1970",
+      title: "Establishment of the High Commission of Sri Lanka in Nairobi, Kenya.",
+      side: "right"
+    },
+    {
+      year: "1971",
+      title: "Establishment of Diplomatic Relations with Kuwait",
+      image: "/assets/1971.png",
+      description:"Diplomatic Relations with Kuwait established on 19 February 1971.",
+      side: "left"
+    },
+    {
+      year: "1971",
+      title: "Opening of the High Commission of Sri Lanka in Singapore.g",
+      side: "right"
+    },
 
 
 
