@@ -17,11 +17,13 @@ const notoSansTamil = Noto_Sans_Tamil({
 const Header = () => {
   return (
     <header className="bg-[#9DD9D2] text-gray-900 p-4 flex items-center justify-between">
-      <div className="w-24 h-24 bg-white/70 flex items-center justify-center">
+      {/* Logo */}
+      <div className="flex items-center justify-center w-24 h-24">
         <Image src={logo} alt="Sri Lanka Logo" width={80} height={80} className="object-contain" />
       </div>
 
-      <div className="text-center">
+      {/* Center Titles */}
+      <div className="text-center flex-1 mx-4">
         <h1 className={`text-2xl ${abhayaLibre.className}`}>
           විදේශ කටයුතු , විදේශ රැකියා සහ සංචාරක අමාත්‍යාංශය
         </h1>
@@ -33,12 +35,18 @@ const Header = () => {
         </h3>
       </div>
 
-      <div className="w-24 h-24 bg-white/70 flex items-center justify-center">
-        <Image src={flag} alt="Sri Lanka Flag" width={80} height={80} className="object-contain" />
+      {/* Flag */}
+      <div className="flex items-center justify-center">
+      <Image
+          src={flag}
+          alt="Sri Lanka Flag"
+          width={120}  // larger
+          height={120}
+          className="object-contain"
+      />
       </div>
     </header>
   );
 };
 
 export default Header;
-
