@@ -33,18 +33,18 @@ export default function Home() {
     {
       title: "Visiting External Affairs Minister of India Dr. S. Jaishankar holds talks with Foreign Minister Vijitha Herath",
       link: "/statements",
-      image: "/placeholder-minister.jpg"
+      image: "/"
     },
     {
       title: "First Official Visit to India",
       description: "President Anura Kumara Dissanayake sworn in as the 9th Executive President of Sri Lanka",
       link: "/statements",
-      image: "/placeholder-india.jpg"
+      image: "/assets/swore.jpeg"
     },
     {
       title: "Sri Lanka celebrates IORA Day under its Chairmanship at Galle Face Green",
       link: "/statements",
-      image: "/placeholder-iora-day.jpg"
+      image: "/assets/iora.jpeg"
     }
   ];
 
