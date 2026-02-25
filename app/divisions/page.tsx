@@ -224,7 +224,13 @@ const CONTENT_MAP: Record<string, any> = {
 
           <div className="space-y-4">
 
-            <p>The Africa Affairs Division deals with matters pertaining to relations with 54 countries in the African continent and the African Union (AU).</p>
+            <p>The Africa Affairs Division deals with matters pertaining to relations with 54 countries in the African continent and the African Union (AU).
+
+The Division is assigned with the task of following political and socio-economic developments as well as coordinating bilateral relations with these countries.
+
+It also directs Sri Lanka’s foreign policy with these countries in the political, economic, security, education and social spheres. Technical cooperation and development assistance, investment relations, tourism and cultural promotion through bilateral, regional and multilateral engagements are part of the responsibilities of the Division.
+
+Sri Lanka has 6 resident Missions in the region. (Egypt, South Africa, Nigeria, Kenya, Seychelles, Ethiopia).</p>
 
             <p>Sri Lanka has 6 resident Missions in the region (Egypt, South Africa, Nigeria, Kenya, Seychelles, Ethiopia).</p>
 
