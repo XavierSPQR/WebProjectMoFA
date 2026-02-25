@@ -1,13 +1,14 @@
 'use client';
 
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { 
 
   ChevronDown, Building2, User, 
 
-  Users, Mail, Phone 
+  Users
 
 } from 'lucide-react';
 
@@ -68,9 +69,16 @@ const bilateralSubDivisions = [
 
 // --- CONTACT DATA STRUCTURE ---
 
+interface Contact {
+  role: string;
+  name: string;
+  email: string;
+  phone: string;
+}
+
 // Maps to either the division 'path' or the sub-division 'name'
 
-const CONTACTS_MAP: Record<string, any[]> = {
+const CONTACTS_MAP: Record<string, Contact[]> = {
 
   // Bilateral Sub-Divisions
 
@@ -216,7 +224,7 @@ const CONTACTS_MAP: Record<string, any[]> = {
 };
 
 
-const CONTENT_MAP: Record<string, any> = {
+const CONTENT_MAP: Record<string, React.ReactNode | Record<string, React.ReactNode>> = {
 
     'bilateral-affairs': {
 
@@ -312,34 +320,38 @@ const ContactCard = ({ role, name, email, phone }: { role: string; name: string;
 );
 
 
-export default function DivisionsPage() {
+function DivisionsContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id');
+  const sub = searchParams.get('sub');
 
-  const [selectedDivision, setSelectedDivision] = useState(divisions[0]);
+  const selectedDivision = (id && divisions.find(d => d.path === id)) || divisions[0];
+  const selectedSubDivision = (id === 'bilateral-affairs' && sub && bilateralSubDivisions.includes(sub)) ? sub : bilateralSubDivisions[0];
 
-  const [isBilateralExpanded, setIsBilateralExpanded] = useState(true);
+  const [isBilateralExpanded, setIsBilateralExpanded] = useState(!id || id === 'bilateral-affairs');
+  const [prevId, setPrevId] = useState(id);
 
-  const [selectedSubDivision, setSelectedSubDivision] = useState(bilateralSubDivisions[0]);
+  if (id !== prevId) {
+    setPrevId(id);
+    if (id === 'bilateral-affairs') {
+      setIsBilateralExpanded(true);
+    } else if (id) {
+      setIsBilateralExpanded(false);
+    }
+  }
 
 
   const handleDivisionClick = (division: typeof divisions[0]) => {
-
-    setSelectedDivision(division);
-
     if (division.path === 'bilateral-affairs') {
-
       setIsBilateralExpanded(!isBilateralExpanded);
-
     }
-
+    router.push(`/divisions?id=${division.path}${division.path === 'bilateral-affairs' ? `&sub=${selectedSubDivision}` : ''}`);
   };
 
 
-  const handleSubDivisionClick = (sub: string) => {
-
-    setSelectedDivision(divisions[0]);
-
-    setSelectedSubDivision(sub);
-
+  const handleSubDivisionClick = (subName: string) => {
+    router.push(`/divisions?id=bilateral-affairs&sub=${subName}`);
   };
 
 
@@ -514,4 +526,12 @@ export default function DivisionsPage() {
 
   );
 
+}
+
+export default function DivisionsPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center">Loading divisions...</div>}>
+      <DivisionsContent />
+    </Suspense>
+  );
 }
