@@ -256,7 +256,7 @@ export default function StatementsPage() {
 
   const getActiveList = (): Statement[] => {
     if (selectedCat.id === 'mission') {
-      return (STATEMENTS_DATA['mission'] as any)[selectedSubCat] || [];
+      return (STATEMENTS_DATA['mission'] as Record<string, Statement[]>)[selectedSubCat] || [];
     }
     return (STATEMENTS_DATA[selectedCat.id] as Statement[]) || [];
   };
