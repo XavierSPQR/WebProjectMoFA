@@ -76,7 +76,7 @@ const CONTACTS_MAP: Record<string, any[]> = {
 
   'Africa Affairs': [
 
-    { role: 'Actg. Director General', name: 'Mr. Thushara Rodrigo', email: 'dgpd(at)mfa.gov.lk', phone: '+94 11 2 345678' },
+    { role: ' Director General', name: 'Ms. Dilani Weerakoon', email: 'dilani.weerakoon(at)mfa.gov.lk' },
 
     { role: 'Director', name: 'Mr. Chathura Weerasekara', email: 'chathura.weerasekara(at)mfa.gov.lk', phone: '+94 112 473 944' },
 
