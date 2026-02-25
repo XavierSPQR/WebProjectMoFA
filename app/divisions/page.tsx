@@ -342,6 +342,24 @@ function DivisionsContent() {
   }
 
 
+  useEffect(() => {
+    const id = searchParams.get('id');
+    const sub = searchParams.get('sub');
+
+    if (id) {
+      const division = divisions.find(d => d.path === id);
+      if (division) {
+        setSelectedDivision(division);
+        if (id === 'bilateral-affairs' && sub) {
+          setIsBilateralExpanded(true);
+          if (bilateralSubDivisions.includes(sub)) {
+            setSelectedSubDivision(sub);
+          }
+        }
+      }
+    }
+  }, [searchParams]);
+
   const handleDivisionClick = (division: typeof divisions[0]) => {
     if (division.path === 'bilateral-affairs') {
       setIsBilateralExpanded(!isBilateralExpanded);
@@ -531,6 +549,14 @@ function DivisionsContent() {
 export default function DivisionsPage() {
   return (
     <Suspense fallback={<div className="p-10 text-center">Loading divisions...</div>}>
+      <DivisionsContent />
+    </Suspense>
+  );
+}
+
+export default function DivisionsPage() {
+  return (
+    <Suspense fallback={<div>Loading divisions...</div>}>
       <DivisionsContent />
     </Suspense>
   );
