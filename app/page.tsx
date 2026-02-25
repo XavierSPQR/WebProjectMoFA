@@ -138,27 +138,6 @@ export default function Home() {
                 View All News & Statements →
               </Link>
             </div>
-
-            {/* About Republic Building */}
-            <div className="mt-12 border-t-4 border-[#F4D06F] pt-8">
-              <div className="bg-gray-50 p-6">
-                <h3 className="text-2xl font-bold text-[#392F5A] mb-4">
-                  The Republic Building
-                </h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  The historic Republic Building has housed the Foreign Ministry since 1948. Located in Colombo, this iconic building represents Sri Lanka&apos;s diplomatic heritage and continues to serve as the headquarters for the Ministry of Foreign Affairs, Foreign Employment and Tourism.
-                </p>
-                <p className="text-gray-600 italic">
-                  ඵෙතිහාසික ජනරජ ගොඩනැඟිල්ල 1948 වසරේ සිට විදේශ කටයුතු අමාත්‍යාංශයේ නිවහනයි.
-                </p>
-                <Link
-                  href="/about"
-                  className="inline-block mt-4 text-[#392F5A] font-semibold hover:underline"
-                >
-                  Learn More About Our History →
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* Sidebar - Quick Links */}
@@ -227,69 +206,9 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-
-            {/* Social Media / Emergency Contact */}
-            <div className="mt-8 bg-red-50 border-2 border-red-200 p-4">
-              <h3 className="text-lg font-bold text-red-800 mb-2">
-                Emergency Contact
-              </h3>
-              <p className="text-sm text-gray-700 mb-2">
-                For urgent consular assistance for Sri Lankan citizens abroad
-              </p>
-              <a
-                href="/divisions/emergency-response-unit"
-                className="block bg-red-600 text-white text-center p-2 hover:bg-red-700 transition-colors font-semibold"
-              >
-                Emergency Response Unit
-              </a>
-            </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom CTA Section */}
-      <section className="bg-[#392F5A] text-white py-12 mt-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-3">Our Mission</h3>
-              <p className="text-white/90">
-                To safeguard and promote Sri Lanka&apos;s interests abroad through effective diplomacy
-              </p>
-              <Link
-                href="/about"
-                className="inline-block mt-4 text-[#F4D06F] hover:underline font-semibold"
-              >
-                Learn More →
-              </Link>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-3">Diplomatic Missions</h3>
-              <p className="text-white/90">
-                Sri Lanka maintains diplomatic relations with countries worldwide
-              </p>
-              <Link
-                href="/divisions"
-                className="inline-block mt-4 text-[#F4D06F] hover:underline font-semibold"
-              >
-                View Missions →
-              </Link>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-3">Get Assistance</h3>
-              <p className="text-white/90">
-                Access consular services and support for Sri Lankan citizens
-              </p>
-              <Link
-                href="/contact-sl"
-                className="inline-block mt-4 text-[#F4D06F] hover:underline font-semibold"
-              >
-                Contact Us →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
