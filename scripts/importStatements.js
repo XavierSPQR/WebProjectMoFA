@@ -1,5 +1,4 @@
 const admin = require('firebase-admin');
-// Corrected import for csv-parser
 const parse = require('csv-parser');
 const fs = require('fs');
 const path = require('path');
@@ -8,41 +7,22 @@ const path = require('path');
 // Key should be in the 'scripts' folder and named 'serviceAccountKey.json'
 // ---
 
-// Construct the absolute path to the root of your project
-const projectRoot = path.resolve(__dirname, '..'); 
+const projectRoot = path.resolve(__dirname, '..');
 const serviceAccountPath = path.join(__dirname, 'serviceAccountKey.json');
-// The CSV file is in the root directory
-const csvFilePath = path.join(projectRoot, 'statements.csv'); 
+const csvFilePath = path.join(projectRoot, 'statements.csv');
 
-// Check if the service account key exists
 if (!fs.existsSync(serviceAccountPath)) {
-  console.error(`
-    ERROR: Firebase service account key not found at: ${serviceAccountPath}
-    Please follow these steps:
-    1. Go to your Firebase project settings > \"Service accounts\".
-    2. Click \"Generate new private key\".
-    3. Rename the downloaded file to 'serviceAccountKey.json'.
-    4. Place it inside the 'scripts' directory.
-    
-    Script will now exit.
-  `);
+  console.error(`\nERROR: Firebase service account key not found at: ${serviceAccountPath}`);
   process.exit(1);
 }
 
-// Check if the CSV file exists
 if (!fs.existsSync(csvFilePath)) {
-    console.error(`
-      ERROR: CSV file not found at: ${csvFilePath}
-      Please ensure the 'statements.csv' file is in the root of your project directory.
-      
-      Script will now exit.
-    `);
-    process.exit(1);
+  console.error(`\nERROR: CSV file not found at: ${csvFilePath}`);
+  process.exit(1);
 }
 
 const serviceAccount = require(serviceAccountPath);
 
-// Initialize Firebase Admin SDK
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
@@ -52,54 +32,71 @@ const statementsCollection = db.collection('statements');
 
 console.log(`Starting data import from: ${csvFilePath}`);
 
-const results = [];
+const records = [];
 fs.createReadStream(csvFilePath)
-  .pipe(parse()) // This will now work correctly
-  .on('data', (data) => results.push(data))
+  .pipe(parse())
+  .on('data', (data) => records.push(data))
   .on('end', async () => {
-    console.log(`Finished reading CSV file. Found ${results.length} records. Starting upload to Firestore...`);
+    console.log(`Finished reading CSV file. Found ${records.length} records. Validating and uploading to Firestore...`);
 
     const batch = db.batch();
-    let count = 0;
+    let successfulCount = 0;
 
-    for (const record of results) {
-      // Skip empty rows
-      if (!record.title) {
-        continue;
-      }
+    for (const record of records) {
+      if (!record.title) continue; // Skip empty rows
 
       try {
-        const docRef = statementsCollection.doc(); // Create a new doc with a random ID
-        
+        const dateString = record.date;
+
+        // 1. Validate: Check for empty date
+        if (!dateString || !dateString.trim()) {
+          console.warn(`SKIPPING: \"${record.title}\" - Reason: Date field is empty.`);
+          continue;
+        }
+
+        // 2. Parse: Try to create a Date object
+        const dateObj = new Date(dateString);
+
+        // 3. Validate: Check if parsing was successful
+        if (isNaN(dateObj.getTime())) {
+          console.error(`SKIPPING: \"${record.title}\" - Reason: Could not parse date \"${dateString}\". Please use a standard format (e.g., YYYY-MM-DD or Month Day, YYYY).`);
+          continue;
+        }
+
+        const docRef = statementsCollection.doc();
         const data = {
           title: record.title,
-          // Convert date string to Firestore Timestamp
-          date: admin.firestore.Timestamp.fromDate(new Date(record.date)),
+          date: admin.firestore.Timestamp.fromDate(dateObj),
           excerpt: record.excerpt,
           fullContent: record.fullContent,
           category: record.category,
         };
 
-        // Only add subCategory if it exists and is not empty in the CSV
         if (record.subCategory && record.subCategory.trim() !== '') {
           data.subCategory = record.subCategory;
         }
 
         batch.set(docRef, data);
-        count++;
+        successfulCount++;
 
       } catch (error) {
-        console.error(`Error processing record with title: \"${record.title}\"`, error);
+        console.error(`CRITICAL ERROR processing record with title: \"${record.title}\"`, error);
       }
     }
-    
-    try {
+
+    if (successfulCount > 0) {
+      try {
         await batch.commit();
-        console.log('--------------------');
-        console.log(`Successfully uploaded ${count} documents to Firestore!`);
+        console.log('\n--------------------');
+        console.log(`Successfully uploaded ${successfulCount} of ${records.length} documents to Firestore!`);
         console.log('Data import complete!');
         console.log('--------------------');
-    } catch(error) {
-        console.error('Error committing batch to Firestore:', error);
+      } catch (error) {
+        console.error('\nError committing batch to Firestore:', error);
+      }
+    } else {
+      console.log('\n--------------------');
+      console.log('Upload finished. No records were uploaded. Please check the warnings/errors above.');
+      console.log('--------------------');
     }
   });
