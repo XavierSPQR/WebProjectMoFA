@@ -2,9 +2,23 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { db } from '../firebase';
+import { collection, getDocs, query, orderBy, limit, Timestamp } from 'firebase/firestore';
+
+interface FeaturedNews {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  link: string;
+}
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [featuredNews, setFeaturedNews] = useState<FeaturedNews[]>([]);
+  const [newsLoading, setNewsLoading] = useState(true);
+  const [newsError, setNewsError] = useState<string | null>(null);
 
   const heroSlides = [
     {
@@ -29,24 +43,47 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [heroSlides.length]);
 
-  const featuredNews = [
-    {
-      title: "Visiting External Affairs Minister of India Dr. S. Jaishankar holds talks with Foreign Minister Vijitha Herath",
-      link: "/statements",
-      image: "/"
-    },
-    {
-      title: "First Official Visit to India",
-      description: "President Anura Kumara Dissanayake sworn in as the 9th Executive President of Sri Lanka",
-      link: "/statements",
-      image: "/assets/swore.jpeg"
-    },
-    {
-      title: "Sri Lanka celebrates IORA Day under its Chairmanship at Galle Face Green",
-      link: "/statements",
-      image: "/assets/iora.jpeg"
-    }
-  ];
+  useEffect(() => {
+    const fetchFeaturedNews = async () => {
+      try {
+        const statementsCollection = collection(db, 'statements');
+        const q = query(statementsCollection, orderBy('date', 'desc'), limit(3));
+        const querySnapshot = await getDocs(q);
+
+        const newsItems = querySnapshot.docs.reduce<FeaturedNews[]>((acc, doc) => {
+          const data = doc.data();
+          // Filter out items with invalid dates
+          if (data.date && typeof data.date.seconds === 'number') {
+            const firestoreTimestamp = new Timestamp(data.date.seconds, data.date.nanoseconds);
+            const jsDate = firestoreTimestamp.toDate();
+            const date = jsDate.toLocaleDateString('en-GB', {
+              day: '2-digit',
+              month: 'long',
+              year: 'numeric'
+            });
+
+            acc.push({
+              id: doc.id,
+              title: data.title,
+              excerpt: data.excerpt,
+              date: date,
+              link: `/statements#${doc.id}`
+            });
+          }
+          return acc;
+        }, []);
+
+        setFeaturedNews(newsItems);
+      } catch (err) {
+        console.error("Failed to fetch featured news:", err);
+        setNewsError("Could not load latest news.");
+      } finally {
+        setNewsLoading(false);
+      }
+    };
+
+    fetchFeaturedNews();
+  }, []);
 
   const quickLinks = [
     { title: "PARLIAMENT OF SRI LANKA", url: "https://www.parliament.lk", external: true },
@@ -111,9 +148,11 @@ export default function Home() {
             </h2>
 
             <div className="space-y-6">
-              {featuredNews.map((news, index) => (
+              {newsLoading && <p>Loading news...</p>}
+              {newsError && <p className="text-red-500">{newsError}</p>}
+              {!newsLoading && !newsError && featuredNews.map((news) => (
                 <Link
-                  key={index}
+                  key={news.id}
                   href={news.link}
                   className="block border border-gray-200 hover:border-[#392F5A] transition-colors"
                 >
@@ -121,9 +160,8 @@ export default function Home() {
                     <h3 className="text-xl font-semibold text-gray-900 hover:text-[#392F5A] mb-2">
                       {news.title}
                     </h3>
-                    {news.description && (
-                      <p className="text-gray-600">{news.description}</p>
-                    )}
+                    <p className="text-gray-600 line-clamp-2 italic">{news.excerpt}</p>
+                    <p className="text-sm text-gray-500 mt-2">{news.date}</p>
                   </div>
                 </Link>
               ))}
