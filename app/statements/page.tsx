@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { db } from '../firebase';
+// Import Timestamp to correctly handle the date object from Firestore
+import { collection, getDocs, query, orderBy, Timestamp } from 'firebase/firestore';
 import { 
   ChevronDown, 
-  ChevronRight, 
   User, 
   Mic2, 
   Globe, 
@@ -16,13 +17,14 @@ import {
   ChevronUp 
 } from 'lucide-react';
 
-// Define the shape of a single statement
 interface Statement {
   id: string;
   title: string;
   date: string;
   excerpt: string;
-  fullContent: string; 
+  fullContent: string;
+  category: string;
+  subCategory?: string;
 }
 
 const categories = [
@@ -37,7 +39,7 @@ const categories = [
 const missionSubCategories = ['Geneva', 'New York', 'Other'];
 
 export default function StatementsPage() {
-  const [statementsData, setStatementsData] = useState<Record<string, Statement[] | Record<string, Statement[]>>>({});
+  const [allStatements, setAllStatements] = useState<Statement[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedCat, setSelectedCat] = useState(categories[0]);
@@ -46,35 +48,41 @@ export default function StatementsPage() {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    // Simulate fetching data from Firebase
     const fetchData = async () => {
       try {
-        // In a real application, you would fetch this from Firebase
-        const fetchedData = {
-          'president': [
-            {
-              id: 'p1',
-              title: '2026 New Year Message of H.E. the President of Sri Lanka',
-              date: '01.01.2026',
-              excerpt: 'As we step into the New Year 2026, we do so as a nation that has shouldered the greatest reform programme...',
-              fullContent: 'As we step into the New Year 2026, we do so as a nation that has shouldered the greatest reform programme and reconstruction effort in our modern history. Despite numerous challenges, the year 2025 laid the foundation for a resilient economy. Our focus remains on social justice, transparency, and ensuring that the benefits of growth reach every citizen. Let this year be a testament to our collective strength and unity.',
-            },
-          ],
-          'mission': { 
-            'Geneva': [
-              {
-                id: 'g1',
-                title: 'Statement by Sri Lanka during consideration of draft resolution HRC. 60/L.1/Rev.1',
-                date: '07.10.2025',
-                excerpt: 'Sri Lanka participated in discussions on this resolution in a spirit of open engagement...',
-                fullContent: 'Mr. President, Sri Lanka participated in discussions on this resolution in a spirit of open and constructive engagement, that we have demonstrated throughout in our interactions with this Council. We appreciate the continued dialogue.',
-              },
-            ]
-        }
-    };
-        setStatementsData(fetchedData);
+        console.log("Fetching statements from Firestore...");
+        const statementsCollection = collection(db, 'statements');
+        const q = query(statementsCollection, orderBy('date', 'desc'));
+        const querySnapshot = await getDocs(q);
+
+        const fetchedStatements = querySnapshot.docs.map(doc => {
+          const data = doc.data();
+
+          // FINAL CORRECTION: Manually construct a Timestamp from the raw seconds/nanoseconds object
+          const firestoreTimestamp = new Timestamp(data.date.seconds, data.date.nanoseconds);
+          const jsDate = firestoreTimestamp.toDate();
+          const date = jsDate.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+          }).replace(/\//g, '.');
+
+          return {
+            id: doc.id,
+            title: data.title,
+            date: date,
+            excerpt: data.excerpt,
+            fullContent: data.fullContent,
+            category: data.category,
+            subCategory: data.subCategory
+          } as Statement;
+        });
+
+        console.log(`Successfully fetched ${fetchedStatements.length} statements.`);
+        setAllStatements(fetchedStatements);
       } catch (err) {
-        setError('Failed to load statements.');
+        console.error("Firebase fetch error:", err);
+        setError('Failed to load statements from the database.');
       } finally {
         setLoading(false);
       }
@@ -95,19 +103,20 @@ export default function StatementsPage() {
 
   const handleCategoryClick = (cat: typeof categories[0]) => {
     setSelectedCat(cat);
-    if (cat.id === 'mission') setIsMissionExpanded(!isMissionExpanded);
+    if (cat.id === 'mission') {
+      if(!isMissionExpanded) setIsMissionExpanded(true);
+    } else {
+      setIsMissionExpanded(false);
+    }
     setExpandedIds(new Set()); 
   };
 
-  const getActiveList = (): Statement[] => {
+  const activeStatements = allStatements.filter(statement => {
     if (selectedCat.id === 'mission') {
-      const missionData = statementsData['mission'] as Record<string, Statement[]>;
-      return missionData ? missionData[selectedSubCat] || [] : [];
+      return statement.category === 'mission' && statement.subCategory === selectedSubCat;
     }
-    return (statementsData[selectedCat.id] as Statement[]) || [];
-  };
-
-  const activeStatements = getActiveList();
+    return statement.category === selectedCat.id;
+  });
 
   return (
     <main className="flex-grow p-6 md:p-10 container mx-auto bg-[#fdfdfd]">
@@ -131,7 +140,7 @@ export default function StatementsPage() {
                       <cat.icon size={20} className={selectedCat.id === cat.id ? 'text-navy' : 'text-slate-400'} />
                       <span className="text-base">{cat.name}</span>
                     </div>
-                    {cat.id === 'mission' && <ChevronDown size={16} className={isMissionExpanded ? 'rotate-180' : ''} />}
+                    {cat.id === 'mission' && <ChevronDown size={16} className={`transition-transform ${isMissionExpanded ? 'rotate-180' : ''}`} />}
                   </button>
                   {cat.id === 'mission' && isMissionExpanded && (
                     <div className="ml-11 my-1 flex flex-col gap-1 border-l-2 border-slate-100 pl-3">
@@ -139,7 +148,7 @@ export default function StatementsPage() {
                         <button
                           key={sub}
                           onClick={() => { setSelectedCat(cat); setSelectedSubCat(sub); }}
-                          className={`text-left px-3 py-2 text-base rounded-lg ${selectedSubCat === sub ? 'text-navy font-bold bg-slate-100' : 'text-slate-500'}`}
+                          className={`text-left px-3 py-2 text-base rounded-lg ${selectedCat.id === 'mission' && selectedSubCat === sub ? 'text-navy font-bold bg-slate-100' : 'text-slate-500'}`}
                         >
                           {sub}
                         </button>
@@ -196,7 +205,7 @@ export default function StatementsPage() {
               !loading && !error && (
                 <div className="bg-white p-20 rounded-[40px] border border-dashed border-slate-200 text-center">
                   <FileText className="text-slate-300 mx-auto mb-4" size={32} />
-                  <p className="text-slate-400">Latest statements are being indexed.</p>
+                  <p className="text-slate-400">No statements found for this category.</p>
                 </div>
               )
             )}
