@@ -1,5 +1,6 @@
 const admin = require('firebase-admin');
-const { parse } = require('csv-parser');
+// Corrected import for csv-parser
+const parse = require('csv-parser');
 const fs = require('fs');
 const path = require('path');
 
@@ -53,7 +54,7 @@ console.log(`Starting data import from: ${csvFilePath}`);
 
 const results = [];
 fs.createReadStream(csvFilePath)
-  .pipe(parse())
+  .pipe(parse()) // This will now work correctly
   .on('data', (data) => results.push(data))
   .on('end', async () => {
     console.log(`Finished reading CSV file. Found ${results.length} records. Starting upload to Firestore...`);
