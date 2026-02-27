@@ -4,14 +4,14 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { db } from '../firebase';
-import { collection, getDocs, query, orderBy, limit, Timestamp } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy, Timestamp } from 'firebase/firestore';
 
 interface FeaturedNews {
   id: string;
   title: string;
   excerpt: string;
+  content: string;
   date: string;
-  link: string;
 }
 
 export default function Home() {
@@ -19,6 +19,14 @@ export default function Home() {
   const [featuredNews, setFeaturedNews] = useState<FeaturedNews[]>([]);
   const [newsLoading, setNewsLoading] = useState(true);
   const [newsError, setNewsError] = useState<string | null>(null);
+  const [expandedItems, setExpandedItems] = useState<{[key: string]: boolean}>({});
+
+  const toggleItem = (id: string) => {
+    setExpandedItems(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
 
   const heroSlides = [
     {
@@ -46,13 +54,12 @@ export default function Home() {
   useEffect(() => {
     const fetchFeaturedNews = async () => {
       try {
-        const statementsCollection = collection(db, 'statements');
-        const q = query(statementsCollection, orderBy('date', 'desc'), limit(3));
+        const newsCollection = collection(db, 'news');
+        const q = query(newsCollection, orderBy('date', 'desc'));
         const querySnapshot = await getDocs(q);
 
         const newsItems = querySnapshot.docs.reduce<FeaturedNews[]>((acc, doc) => {
           const data = doc.data();
-          // Filter out items with invalid dates
           if (data.date && typeof data.date.seconds === 'number') {
             const firestoreTimestamp = new Timestamp(data.date.seconds, data.date.nanoseconds);
             const jsDate = firestoreTimestamp.toDate();
@@ -66,8 +73,8 @@ export default function Home() {
               id: doc.id,
               title: data.title,
               excerpt: data.excerpt,
+              content: data.content || data.excerpt,
               date: date,
-              link: `/statements#${doc.id}`
             });
           }
           return acc;
@@ -147,34 +154,37 @@ export default function Home() {
               Latest News
             </h2>
 
-            <div className="space-y-6">
-              {newsLoading && <p>Loading news...</p>}
-              {newsError && <p className="text-red-500">{newsError}</p>}
-              {!newsLoading && !newsError && featuredNews.map((news) => (
-                <Link
-                  key={news.id}
-                  href={news.link}
-                  className="block border border-gray-200 hover:border-[#392F5A] transition-colors"
-                >
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 hover:text-[#392F5A] mb-2">
-                      {news.title}
-                    </h3>
-                    <p className="text-gray-600 line-clamp-2 italic">{news.excerpt}</p>
-                    <p className="text-sm text-gray-500 mt-2">{news.date}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <div className="max-h-[75vh] overflow-y-auto pr-4 custom-scrollbar">
+              <div className="space-y-8">
+                {newsLoading && <p>Loading news...</p>}
+                {newsError && <p className="text-red-500">{newsError}</p>}
+                {!newsLoading && !newsError && featuredNews.map((news) => {
+                  const isExpanded = expandedItems[news.id];
+                  return (
+                    <div key={news.id} className="group border-b border-gray-100 pb-8 last:border-0">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                        {news.title}
+                      </h3>
+                      <p className="text-sm text-gray-500 mt-2 mb-4">{news.date}</p>
+                      
+                      <div className="text-gray-600 text-lg leading-relaxed transition-all duration-300">
+                        {isExpanded ? (
+                          <p>{news.content}</p> 
+                        ) : (
+                          <p className="line-clamp-3">{news.excerpt}</p>
+                        )}
+                      </div>
 
-            {/* View All Link */}
-            <div className="mt-6">
-              <Link
-                href="/statements"
-                className="inline-block bg-[#392F5A] text-white px-6 py-3 hover:bg-[#4a3f6a] transition-colors"
-              >
-                View All News & Statements →
-              </Link>
+                      <button 
+                        onClick={() => toggleItem(news.id)} 
+                        className="text-sm font-semibold text-[#392F5A] hover:underline mt-4"
+                      >
+                        {isExpanded ? 'See less' : 'See more'}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
