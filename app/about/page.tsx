@@ -185,7 +185,7 @@ export default function Page() {
                 </div>
                 <div className="relative w-full max-w-[300px] aspect-[4/3] border-4 border-white overflow-hidden shadow-lg">
                   <Image
-                    src="/aruni-ranaraja.jpg"
+                    src="/Aruni-Ranaraja.jpg"
                     alt="Ms. Aruni Ranaraja"
                     fill
                     className="object-cover"
