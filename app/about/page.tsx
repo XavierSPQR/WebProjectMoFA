@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -65,6 +64,7 @@ const ContactItem = ({ role, name, tel, mob, fax, email }) => (
 export default function Page() {
   const [activeTab, setActiveTab] = useState("Overview");
   const [expandedProfile, setExpandedProfile] = useState("Minister");
+  const [isOCExpanded, setIsOCExpanded] = useState(false);
 
   const toggleProfile = (profile) => {
     setExpandedProfile(expandedProfile === profile ? null : profile);
@@ -185,7 +185,7 @@ export default function Page() {
                 </div>
                 <div className="relative w-full max-w-[300px] aspect-[4/3] border-4 border-white overflow-hidden shadow-lg">
                   <Image
-                    src="/Aruni-Ranaraja.jpg"
+                    src="/aruni-ranaraja.jpg"
                     alt="Ms. Aruni Ranaraja"
                     fill
                     className="object-cover"
@@ -255,14 +255,32 @@ export default function Page() {
           </ProfileCard>
         </div>
       </div>
+      
       <div className="flex flex-col gap-4">
-
-        <button className="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-3 px-6 rounded-md w-full transition-colors text-center cursor-pointer">
-
+        <button 
+          onClick={() => setIsOCExpanded(!isOCExpanded)}
+          className="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-3 px-6 rounded-md w-full transition-colors text-center cursor-pointer flex justify-center items-center gap-2"
+        >
           Organizational Structure
-
+          <span className={`transform transition-transform duration-200 ${isOCExpanded ? "rotate-180" : ""}`}>
+            ▼
+          </span>
         </button>
 
+        {isOCExpanded && (
+          <div className="w-full border border-gray-200 rounded-lg overflow-hidden bg-white p-2">
+            <div className="relative w-full h-auto">
+              <Image 
+                src="/assets/oc.jpg" 
+                alt="Organizational Structure" 
+                width={1200} 
+                height={800} 
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );
