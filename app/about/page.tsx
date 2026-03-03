@@ -102,7 +102,7 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
       side: "right"
     },
     {
-<<<<<<< HEAD
+
       year: "1949",
       title: "Opening of the Embassy of Sri Lanka in Rangoon, Myanmar.",
       side: "left"
@@ -338,7 +338,7 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
     },
     {
       year: "1959",
-      title: "Diplomatic Relations with IndonesiaEstablishment of Diplomatic Relations with Cuba",
+      title: "Establishment of Diplomatic Relations with Cuba",
       image: "/assets/1959.png",
       description: "Establishment of Diplomatic Relations with Cuba",
       side: "right"
@@ -380,13 +380,12 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
     },
     {
       year: "1961",
-      title: "Opening of the Embassy of Sri Lanka in Manila, Philippines.",
+      title: "Opening of the Embassy of Sri Lanka in Manila, Philippines",
       side: "right"
     },
     {
       year: "1962",
       title: "Establishment of Diplomatic Relations with the European Commission",
-      image: "/assets/1962.png",
       description:"Diplomatic Relations with the European Commission established.",
       side: "left"
     },
@@ -399,12 +398,12 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
     },
     {
       year: "1965",
-      title: "Opening of the Permanent Mission to the UN in Geneva, Switzerland.",
+      title: "Opening of the Permanent Mission to the UN in Geneva, Switzerland",
       side: "left"
     },
     {
       year: "1966",
-      title: "Opening of the Embassy of Sri Lanka in Bangkok, Thailand.",
+      title: "Opening of the Embassy of Sri Lanka in Bangkok, Thailand",
       side: "right"
     },
     {
@@ -428,7 +427,7 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
     },
     {
       year: "1970",
-      title: "Opening of the Embassy of Sri Lanka in Stockholm, Sweden.",
+      title: "Opening of the Embassy of Sri Lanka in Stockholm, Sweden",
       side: "right"
     },
     {
@@ -440,7 +439,7 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
     },
     {
       year: "1970",
-      title: "Establishment of the High Commission of Sri Lanka in Nairobi, Kenya.",
+      title: "Establishment of the High Commission of Sri Lanka in Nairobi, Kenya",
       side: "right"
     },
     {
@@ -452,93 +451,406 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
     },
     {
       year: "1971",
-      title: "Opening of the High Commission of Sri Lanka in Singapore.g",
+      title: "Opening of the High Commission of Sri Lanka in Singapore",
       side: "right"
     },
-=======
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+   {
+      year: "1972",
+      title: "Establishment of Diplomatic Relations with Bangladesh",
+      image: "/assets/1972.png",
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1972",
+      title: "Establishment of Diplomatic Relations with Ethiopia",
+      description: "Diplomatic Relations with the Federal Democratic Republic of Ethiopia.",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1973",
+      title: "Opening of Sri Lanka Embassy in Brussels, July 1973",
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1974",
+      title: "Sri Lanka presides over Law of the Sea Conference",
+      image: "/assets/1974.jpg",
+      description: <p>Sri Lanka’s Hamilton Shirely Amerasinghe, was appointed as the President of the 3rd United Nations Conference on the Law of the Sea. The  conference resulted in the Law of the Sea Convention, an important document that defines the rights and responsibilities of nations in using the world’s oceans.</p>,
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1975",
+      title: "Establishment of Diplomatic Relations with Palestine",
+      image: "/assets/1975.png",
+      description:"Diplomatic Relations with Palestine",
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1976",
+      title: "Establishment of Diplomatic Relations with Qatar",
+      image: "/assets/1976.png",
+      description: "Diplomatic Relations with Qatar.",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1976",
+      title: "First Sri Lankan President of the United Nations General Assembly",
+      image: "/assets/1976 img 1.jpg",
+      description:<p>In 1976 H. Shirley Amerasinghe was appointed as the first Sri Lankan President of the 31st Session of the United Nations General Assembly.</p> ,
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1976",
+      title: "Sri Lanka hosts 5th NAM",
+      image: "/assets/1976 img 2.jpg",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1976",
+      title: "NAM Summit held",
+      image: "/assets/1976 img 3.jpg",
       side: "left"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With France",
-      image: "/assets/1948-img-3.png",
-      description: "Diplomatic Relations with the French Republic established on 27 October 1948.",
+      year: "1977",
+      title: "Establishment of Diplomatic Relations with Korea",
+      image: "/assets/1977.png",
+      description: "Diplomatic Relations with the Republic of Korea established on 14 November 1977.",
       side: "right"
     },
     {
-      year: "1948",
-      title: "Diplomatic Relations With USA",
-      image: "/assets/1948-img-3.png",
-      description:<p>Diplomatic Relations with the United States of America was established on 29 October 1948, with the Embassy of Ceylon opening in Washington, D.C. with Sir Claude Corea as Ambassador.</p> ,
+      year: "1978",
+      title: "Sri Lanka for Disarmament",
+      image: "/assets/1978.jpg",
+      description:<p>Sri Lanka, proposed the first ever United Nations General Assembly Special Session on Disarmament, which was against nuclear weapons, small arms and the arms race in outer space.</p> ,
       side: "left"
     },
+    {
+      year: "1979",
+      title: "Establishment of Diplomatic Relations with UAE",
+      image: "/assets/1979.png",
+      description: "Diplomatic Relations with the United Arab Emirates established in June 1979.",
+      side: "right"
+    },
+    {
+      year: "1979",
+      title: "Opening of the High Commission of Sri Lanka in Dhaka, Bangladesh, June",
+      side: "left"
+    },
+    {
+      year: "1979",
+      title: "Opening of the Embassy of Sri Lanka in Abu Dhabi, United Arab Emirates",
+      side: "right"
+    },
+    {
+      year: "1980",
+      title: "Opening of the Embassy of Sri Lanka in Malé, Maldives",
+      side: "left"
+    },
+    {
+      year: "1981",
+      title: "Establishment of Diplomatic Relations with Oman",
+      image: "/assets/1981.png",
+      description: "Diplomatic Relations with Oman",
+      side: "right"
+    },
+    {
+      year: "1981",
+      title: "Opening of the Embassy of Sri Lanka in Riyadh, Saudi Arabia",
+      side: "left"
+    },
+    {
+      year: "1982",
+      title: "First UNESCO World Heritage Sites in Sri Lanka",
+      image: "/assets/1982.jpg",
+      description:<p>3 Cultural sites in Sri Lanka are inscribed on the UNESCO World Heritage List: The Ancient City of Polonnaruwa, the Ancient City of Sigiriya, and the Sacred City of Anuradhapura.Today, there are 6 cultural sites inscribed on the UNESCO Heritage List, including the Golden Temple of Dambulla (1991), the Old Town of Galle and its Fortifications (1988), and the Sacred City of Kandy (1988). UNESCO has also listed 2 natural sites on the World Heritage List: the Central Highlands of Sri Lanka (2010) and the Sinharaja Forest Reserve (1988).</p>,
+      side: "right"
+    },
+    {
+      year: "1982",
+      title: "Opening of the Embassy of Sri Lanka in Kuwait",
+      side: "left"
+    },
+    {
+      year: "1983",
+      title: "Opening of the Consulate General of Sri Lanka in Mumbai, India",
+      side: "right"
+    },
+    {
+      year: "1985",
+      title: "South Asian Association for Regional Cooperation (SAARC) established",
+      image: "/assets/1985.jpg",
+      description:<p>The South Asian Association for Regional Cooperation (SAARC) established with the signing of the SAARC Charter in Dhaka on 8 December 1985 with 7 members. Sri Lanka is a founding member.</p>,
+      side: "left"
+    },
+    {
+      year: "1987",
+      title: "Opening of the Embassy of Sri Lanka in Havana, Cuba",
+      side: "right"
+    },
+    {
+      year: "1987",
+      title: "Opening of the Embassy of Sri Lanka in Seoul, Korea",
+      side: "left"
+    },
+    {
+      year: "1987",
+      title: "Opening of the Embassy of Sri Lanka in Muscat, Oman",
+      side: "right"
+    },
+    {
+      year: "1990",
+      title: "Opening of the Embassy of Sri Lanka in Tehran, Iran.",
+      side: "left"
+    },
+    {
+      year: "1992",
+      title: "Establishment of Diplomatic Relations with the Netherlands",
+      image: "/assets/1992.png",
+      description: "Diplomatic Relations with the Netherlands established in November 1992.",
+      side: "right"
+    },
+    {
+      year: "1993",
+      title: "Opening of the Embassy of Sri Lanka in Kathmandu, Nepal",
+      side: "left"
+    },
+    {
+      year: "1993",
+      title: "Opening of the Embassy of Sri Lanka in The Hague, Netherlands",
+      side: "right"
+    },
+    {
+      year: "1993",
+      title: "Opening of the Consulate General of Sri Lanka in Dubai, United Arab Emirates",
+      side: "left"
+    },
+    {
+      year: "1995",
+      title: "Opening of the Embassy of Sri Lanka and the Permanent Mission to the UN in Vienna, Austria",
+      side: "right"
+    },
+    {
+      year: "1996",
+      title: "Establishment of Diplomatic Relations with South Africa",
+      image: "/assets/1996.png",
+      description:"Diplomatic Relations with the Republic of South Africa established.",
+      side: "left"
+    },
+    {
+      year: "1996",
+      title: "Opening of the Embassy of Sri Lanka in Amman, Jordan",
+      side: "right"
+    },
+    {
+      year: "1997",
+      title: "Establishment of Diplomatic Relations with Lebanon",
+      image: "/assets/1997.png",
+      description:"Diplomatic Relations with Lebanon established on 7 May 1997.",
+      side: "left"
+    },
+    {
+      year: "1997",
+      title: "Opening of the Embassy of Sri Lanka in Beirut, Lebanon",
+      side: "right"
+    },
+    {
+      year: "1997",
+      title: "Opening of the Embassy of Sri Lanka in Doha, Qatar",
+      side: "left"
+    },
+    {
+      year: "1997",
+      title: "Opening of the Consulate General of Sri Lanka in Jeddah, Saudi Arabia",
+      side: "right"
+    },
+    {
+      year: "1997",
+      title: "Opening of the High Commission of Sri Lanka in Pretoria, South Africa",
+      side: "left"
+    },
+    {
+      year: "1999",
+      title: "Opening of the Consulate General of Sri Lanka in Sydney, Australia",
+      side: "right"
+    },
+    {
+      year: "1999",
+      title: "Vesak Day marked as United Nations Observance Day",
+      description:<p>In 1999, the United Nations General Assembly unanimously adopted Resolution 554/115, moved by SL Foreign Minister Lakshman Kadirgamar. Vesak Day is now internationally accorded as a United Nations Observance Day.</p>,
+      side: "left"
+    },
+    {
+      year: "1999",
+      title: "Shifting of the Embassy of Sri Lanka from Bonn to Berlin, in Germany",
+      side: "right"
+    },
+    {
+      year: "2000",
+      title: "Opening of the Embassy of Sri Lanka in Tel Aviv, Israel",
+      side: "left"
+    },
+    {
+      year: "2002",
+      title: "National Mine Action Programme",
+      image: "/assets/2000.jpg",
+      side: "right"
+    },
+    {
+      year: "2003",
+      title: "Establishment of Diplomatic Relations with Vietnam",
+      image: "/assets/2003.png",
+      description:"Diplomatic Relations with the Socialist Republic of Vietnam established on 16 January 2003.",
+      side: "left"
+    },
+    {
+      year: "2003",
+      title: "Establishment of the Embassy of Sri Lanka in Hanoi, Vietnam.",
+      side: "right"
+    },
+    {
+      year: "2007",
+      title: "Opening of the Representative Office of Sri Lanka in Ramallah, Palestine",
+      side: "left"
+    },
+    {
+      year: "2012",
+      title: "Opening of the Consulate General of Sri Lanka in Guangzhou, China",
+      side: "right"
+    },
+    {
+      year: "2012",
+      title: "Opening of the Embassy of Sri Lanka in Ankara, Turkey",
+      side: "left"
+    },
+    {
+      year: "2012",
+      title: "Re-opening of the Embassy of Sri Lanka in Baghdad, Iraq",
+      side: "right"
+    },
+    {
+      year: "2013",
+      title: "Opening of the Consulate General of Sri Lanka in Melbourne, Australia",
+      side: "left"
+    },
+    {
+      year: "2013",
+      title: "Diplomatic Relations with Bahrain",
+      image: "/assets/2013.png",
+      description: "Diplomatic Relations established with Bahrain on 8 February 2013",
+      side: "right"
+    },
+    {
+      year: "2013",
+      title: "Opening of the Embassy of Sri Lanka in Manama, Bahrain",
+      side: "left"
+    },
+    {
+      year: "2013",
+      title: "Establishment of Diplomatic Relations with Nigeria",
+      image: "/assets/2013 img 1.png",
+      description: "Diplomatic Relations with Federal Republic of Nigeria established on 1 July 2013.",
+      side: "right"
+    },
+    {
+      year: "2013",
+      title: "Opening of the High Commission of Sri Lanka in Abuja, Nigeria",
+      side: "left"
+    },
+    {
+      year: "2013",
+      title: "Establishment of Diplomatic Relations with Seychelles",
+      image: "/assets/2013 img 2.png",
+      description: "Diplomatic Relations with the Republic of Seychelles established on 11 December 2013.",
+      side: "right"
+    },
+    {
+      year: "2013",
+      title: "Opening of the High Commission of Sri Lanka in Victoria, Seychelles",
+      side: "left"
+    },
+    {
+      year: "2014",
+      title: "Establishment of Diplomatic Relations with Afghanistan",
+      image: "/assets/2014.png",
+      description: "Diplomatic Relations with the Islamic Republic of Afghanistan established on 2 July 2014.",
+      side: "right"
+    },
+    {
+      year: "2014",
+      title: "Opening of the Embassy of Sri Lanka in Kabul, Afghanistan",
+      side: "left"
+    },
+    {
+      year: "2015",
+      title: "Sri Lanka and UN celebrate 60 year partnership",
+      image: "/assets/2015.png",
+      description: <p>2015 marks the 70th anniversary of the founding of the United Nations on 24 October 1945, and the 60th anniversary of Sri Lanka becoming a member-state of the UN on 14 December 1955.</p>,
+      side: "right"
+    },
+    {
+      year: "2016",
+      title: "Opening of the Consulate General of Sri Lanka in Milan, Italy",
+      side: "left"
+    },
+
+    {
+      year: "2016",
+      title: "Opening of the Embassy of Sri Lanka in Addis Ababa, Ethiopia",
+      side: "right"
+    },
+    {
+      year: "2017",
+      title: "Official opening of Sri Lanka Embassy in Ethiopia",
+      image: "/assets/2019.jpg",
+      description:"The Sri Lanka Embassy in Ethiopia was officially opened on 7 February 2017 by the Foreign Minister of Ethiopia & Sri Lanka.",
+      side: "left"
+    },
+    {
+      year: "2017",
+      title: "Sri Lanka joins Mine Ban Treaty: December",
+      description: <p>On December 13, 2017, Sri Lanka acceded to The Convention on the Prohibition of the Use, Stockpiling, Production and Transfer of Anti-Personnel Mines and on their Destruction, known informally as the Ottawa Treaty, the Anti-Personnel Mine Ban Convention, or often simply the Mine Ban Treaty.Sri Lanka became the 163rd nation to accede to the treaty.</p>,
+      side: "right"
+    },
+    {
+      year: "2018",
+      title: "Sri Lanka accedes to the Cluster Munitions Convention",
+      description:<p>On 1 March 2018, Sri Lanka deposited the Instrument of Accession to the Cluster Munitions Convention (Oslo Convention). The Convention is a humanitarian imperative-driven legal instrument which prohibits all use, production, transfer and stockpiling of cluster munitions.</p>,
+      side: "left"
+    },
+    {
+      year: "2019",
+      title: "Opening of the Consulate General of Sri Lanka in Nicosia, Cyprus",
+      image: "/assets/2019.png",
+      description: "Establish Diplomatic Relations between the two countries with effect from 28 February 2019",
+      side: "right"
+    },
+    {
+      year: "2019",
+      title: "Establishment of Diplomatic Relation with The Gambia",
+      image: "/assets/2019 img 1.jpg",
+      description:"Establish Diplomatic Relations between the two countries with effect from 10 May 2019",
+      side: "left"
+    },
+    {
+      year: "2019",
+      title: "Establishment of Diplomatic Relations between Sri Lanka and Nicaragua",
+      image: "/assets/2019 img 2.jpg",
+      description: "Establish Diplomatic Relations between the two countries with effect from 15 May 2019",
+      side: "right"
+    },
+    {
+      year: "2019",
+      title: "Establishment of Diplomatic Relations between Sri Lanka and Saint Lucia",
+      image: "/assets/2019 img 3.jpg",
+      description:"Establish Diplomatic Relations between the two countries with effect from 25th June 2019",
+      side: "left"
+    },
+    
 
 
 
 
-
-
->>>>>>> 433dcb8b715eeccebcded8984257a4ed5693e235
 
 
 
@@ -819,14 +1131,16 @@ This has benefited generations of students and has enabled Sri Lanka to succeed 
 
                       {/* Body */}
                       <div className="p-4 flex flex-col sm:flex-row gap-4 items-start bg-sky-50">
-                        <div className="relative w-32 h-24 flex-shrink-0">
-                          <Image
-                            src={item.image}
-                            alt={item.title}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
+                        {item.image && (
+                          <div className="relative w-32 h-24 flex-shrink-0">
+                            <Image
+                              src={item.image}
+                              alt={item.title}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                        )}
                         <p className="text-gray-700 text-sm leading-relaxed">
                           {item.description}
                         </p>
