@@ -1,8 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { Abhaya_Libre, Noto_Sans_Tamil } from 'next/font/google';
-import logo from '../app/Assets/logo.png';
-import flag from '../app/Assets/flag.png';
 
 const abhayaLibre = Abhaya_Libre({
   subsets: ['sinhala'],
@@ -17,9 +15,16 @@ const notoSansTamil = Noto_Sans_Tamil({
 const Header = () => {
   return (
     <header className="bg-[#9DD9D2] text-gray-900 p-4 flex items-center justify-between">
+      
       {/* Logo */}
       <div className="flex items-center justify-center w-24 h-24">
-        <Image src={logo} alt="Sri Lanka Logo" width={80} height={80} className="object-contain" />
+        <Image
+          src="/assets/logo.png"
+          alt="Sri Lanka Logo"
+          width={80}
+          height={80}
+          className="object-contain"
+        />
       </div>
 
       {/* Center Titles */}
@@ -37,14 +42,15 @@ const Header = () => {
 
       {/* Flag */}
       <div className="flex items-center justify-center">
-      <Image
-          src={flag}
+        <Image
+          src="/assets/flag.png"
           alt="Sri Lanka Flag"
-          width={120}  // larger
+          width={120}
           height={120}
           className="object-contain"
-      />
+        />
       </div>
+
     </header>
   );
 };
