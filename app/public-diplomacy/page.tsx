@@ -43,16 +43,16 @@ export default function Page() {
   ];
 
   return (
-    <main className="bg-[#F5EBEB] flex-grow p-8 flex flex-col items-center gap-12">
+    <main className="bg-[#F5EBEB] flex-grow p-4 md:p-8 flex flex-col items-center gap-8 md:gap-12">
 
       {/* About the Division Section */}
-      <div className="bg-white rounded-[60px] p-16 w-full max-w-6xl shadow-sm min-h-[450px] flex flex-col items-center justify-center">
+      <div className="bg-white rounded-[32px] md:rounded-[60px] p-8 md:p-16 w-full max-w-6xl shadow-sm min-h-[auto] md:min-h-[450px] flex flex-col items-center justify-center">
         
         {/* Section Title */}
-        <h1 className="text-3xl font-bold mb-8 text-black">Public Diplomacy</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-black">Public Diplomacy</h1>
         
         {/* Justified Paragraph */}
-        <p className="text-lg font-medium text-black text-justify leading-relaxed">
+        <p className="text-base md:text-lg font-medium text-black text-justify leading-relaxed">
           The Public Diplomacy Division (PD) acts as the Ministry’s interface between the Government and external actors in terms of information dissemination and projection of Sri Lanka’s image as well as promotion of its interests abroad through the Sri Lanka Missions and the international media. 
           <br /><br />
           The Division also covers events/situations that take place in the Ministry and the country in general, related to Sri Lanka’s foreign policy and also coverage in international media.
@@ -61,17 +61,17 @@ export default function Page() {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col md:flex-row gap-12 w-full justify-center items-center mt-8">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-center items-center mt-8">
           <Link
             href="/public-diplomacy/media-briefings"
-            className="bg-[#D9D9D9] px-16 py-6 rounded-md text-2xl font-bold hover:bg-gray-400 transition-colors text-black text-center min-w-[300px]"
+            className="bg-[#D9D9D9] px-8 md:px-16 py-4 md:py-6 rounded-md text-xl md:text-2xl font-bold hover:bg-gray-400 transition-colors text-black text-center w-full md:min-w-[300px]"
           >
             Media Briefings
           </Link>
 
           <Link
             href="/public-diplomacy/guideline-for-foreign-media"
-            className="bg-[#D9D9D9] px-16 py-6 rounded-md text-2xl font-bold hover:bg-gray-400 transition-colors text-black text-center min-w-[300px]"
+            className="bg-[#D9D9D9] px-8 md:px-16 py-4 md:py-6 rounded-md text-xl md:text-2xl font-bold hover:bg-gray-400 transition-colors text-black text-center w-full md:min-w-[300px]"
           >
             Guideline For Foreign Media
           </Link>
@@ -79,7 +79,7 @@ export default function Page() {
       </div>
 
       {/* Contacts Section */}
-      <div className="bg-white rounded-[100px] p-16 w-full max-w-10xl shadow-sm flex flex-col md:flex-row flex-wrap justify-around items-center gap-12">
+      <div className="bg-white rounded-[40px] md:rounded-[100px] p-8 md:p-16 w-full max-w-10xl shadow-sm flex flex-col md:flex-row flex-wrap justify-around items-center gap-12">
         {contacts.map((contact, index) => (
           <div key={index} className="flex flex-col items-center gap-4 text-center max-w-[250px]">
 

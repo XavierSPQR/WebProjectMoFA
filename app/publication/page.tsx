@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 
 // Define the TypeScript interface for a Publication
 interface Publication {
@@ -88,19 +87,19 @@ export default function PublicationPage() {
     activeTab === "Ministry Publication" ? ministryPublications : otherPublications;
 
   return (
-    <main className="flex-grow p-8 container mx-auto">
+    <main className="flex-grow p-4 md:p-8 container mx-auto">
     
 
       {/* Page title */}
-      <h1 className="text-3xl font-bold text-navy mb-8 border-b-4 border-yellow inline-block">
+      <h1 className="text-2xl md:text-3xl font-bold text-navy mb-8 border-b-4 border-yellow inline-block">
         Publication
       </h1>
 
       {/* Tab buttons for Ministry vs Other Publications */}
-      <div className="flex mb-6 gap-2">
+      <div className="flex flex-col sm:flex-row mb-6 gap-2">
       <button
           onClick={() => setActiveTab("Ministry Publication")}
-          className={`px-6 py-2 font-bold text-lg transition-colors cursor-pointer border border-gray-300 ${
+          className={`px-4 md:px-6 py-2 font-bold text-base md:text-lg transition-colors cursor-pointer border border-gray-300 ${
             activeTab === "Ministry Publication"
               ? "bg-white text-black"
               : "bg-gray-50 text-gray-500"
@@ -111,7 +110,7 @@ export default function PublicationPage() {
 
       <button
           onClick={() => setActiveTab("Other Publication")}
-          className={`px-6 py-2 font-bold text-lg transition-colors cursor-pointer border border-gray-300 ${
+          className={`px-4 md:px-6 py-2 font-bold text-base md:text-lg transition-colors cursor-pointer border border-gray-300 ${
           activeTab === "Other Publication"
               ? "bg-white text-black"
               : "bg-gray-50 text-gray-500"
@@ -121,16 +120,16 @@ export default function PublicationPage() {
       </button>
 </div>
       {/* Publication list container */}
-      <div className="bg-[#8DA8B1] p-12 min-h-[400px]">
+      <div className="bg-[#8DA8B1] p-4 md:p-12 min-h-[300px] md:min-h-[400px] rounded-2xl md:rounded-none">
         <div className="max-w-5xl mx-auto">
           {/* Table header */}
-          <div className="flex mb-6 text-2xl font-bold text-black">
+          <div className="hidden sm:flex mb-6 text-xl md:text-2xl font-bold text-black">
             <div className="w-1/4 text-center">Year</div>
             <div className="w-3/4 text-center">Report Name</div>
           </div>
 
           {/* Publication entries */}
-          <div className="space-y-0 shadow-sm">
+          <div className="space-y-2 sm:space-y-0 shadow-sm">
             {publications.length > 0 ? (
               publications.map((pub, index) => (
                 <a
@@ -138,16 +137,16 @@ export default function PublicationPage() {
                   href={pub.filePath} // PDF file path
                   target="_blank" // open in new tab
                   rel="noopener noreferrer"
-                  className={`flex items-center min-h-[100px] cursor-pointer ${
+                  className={`flex flex-col sm:flex-row items-center sm:min-h-[100px] cursor-pointer rounded-lg sm:rounded-none overflow-hidden ${
                     index % 2 === 0 ? "bg-[#6F8B94]" : "bg-[#D1DCE0]"
                   }`}
                 >
                   {/* Year */}
-                  <div className="w-1/4 text-center font-bold text-2xl px-6 text-black">
+                  <div className="w-full sm:w-1/4 text-center font-bold text-xl md:text-2xl px-6 py-2 sm:py-0 text-black border-b sm:border-b-0 border-black/10">
                     {pub.year}
                   </div>
                   {/* Report Name */}
-                  <div className="w-3/4 text-center font-bold text-2xl px-6 py-4 text-black">
+                  <div className="w-full sm:w-3/4 text-center font-bold text-lg md:text-2xl px-6 py-4 text-black">
                     {pub.reportName}
                   </div>
                 </a>

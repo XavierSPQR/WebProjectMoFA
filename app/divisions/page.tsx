@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, Suspense } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { 
   ChevronDown, Building2, User, 
@@ -113,7 +113,7 @@ const CONTACTS_MAP: Record<string, Contact[]> = {
   ],
 };
 
-const CONTENT_MAP: Record<string, any> = {
+const CONTENT_MAP: Record<string, React.ReactNode | Record<string, React.ReactNode>> = {
   'bilateral-affairs': {
     'Africa Affairs': (
       <div className="space-y-4">
@@ -177,6 +177,7 @@ function DivisionsContent() {
     : bilateralSubDivisions[0];
 
   const [isBilateralExpanded, setIsBilateralExpanded] = useState(id === 'bilateral-affairs');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleDivisionClick = (division: typeof divisions[0]) => {
     if (division.path === 'bilateral-affairs') {
@@ -184,26 +185,34 @@ function DivisionsContent() {
       router.push(`/divisions?id=${division.path}&sub=${selectedSubDivision}`);
     } else {
       router.push(`/divisions?id=${division.path}`);
+      setIsMobileMenuOpen(false);
     }
   };
 
   const handleSubDivisionClick = (subName: string) => {
     router.push(`/divisions?id=bilateral-affairs&sub=${subName}`);
+    setIsMobileMenuOpen(false);
   };
 
   const currentKey = selectedDivision.path === 'bilateral-affairs' ? selectedSubDivision : selectedDivision.path;
   const currentContacts = CONTACTS_MAP[currentKey] || [];
 
   return (
-    <main className="flex-grow p-6 md:p-10 container mx-auto bg-[#fdfdfd]">
-      <div className="flex flex-col lg:flex-row gap-10">
+    <main className="flex-grow p-4 md:p-10 container mx-auto bg-[#fdfdfd]">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
         <aside className="w-full lg:w-1/4">
           <div className="sticky top-8 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
-            <div className="p-5 bg-navy text-white flex items-center gap-3">
-              <Building2 className="text-yellow" size={24} />
-              <h2 className="text-lg font-bold">MFA Directory</h2>
-            </div>
-            <nav className="p-2 flex flex-col gap-1 max-h-[70vh] overflow-y-auto custom-scrollbar">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="w-full p-5 bg-navy text-white flex items-center justify-between lg:cursor-default"
+            >
+              <div className="flex items-center gap-3">
+                <Building2 className="text-yellow" size={24} />
+                <h2 className="text-lg font-bold">MFA Directory</h2>
+              </div>
+              <ChevronDown size={20} className={`lg:hidden transition-transform ${isMobileMenuOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <nav className={`p-2 flex-col gap-1 max-h-[70vh] overflow-y-auto custom-scrollbar ${isMobileMenuOpen ? 'flex' : 'hidden lg:flex'}`}>
               {divisions.map((division) => (
                 <div key={division.path}>
                   <button
@@ -238,17 +247,17 @@ function DivisionsContent() {
 
         <section className="w-full lg:w-3/4">
           <div className="mb-8">
-            <h1 className="text-4xl font-extrabold text-navy tracking-tight">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-navy tracking-tight">
               {selectedDivision.path === 'bilateral-affairs' ? selectedSubDivision : selectedDivision.name}
             </h1>
             <div className="h-1.5 w-20 bg-yellow mt-4 rounded-full"></div>
           </div>
 
-          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-100 min-h-[600px]">
+          <div className="bg-white p-6 md:p-12 rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-100 min-h-[400px] md:min-h-[600px]">
             <div className="text-slate-700 leading-relaxed text-lg mb-16">
                 {(selectedDivision.path === 'bilateral-affairs' 
-                  ? CONTENT_MAP['bilateral-affairs'][selectedSubDivision] 
-                  : CONTENT_MAP[selectedDivision.path]) || <p>Content is currently being updated by the Ministry of Foreign Affairs.</p>}
+                  ? (CONTENT_MAP['bilateral-affairs'] as Record<string, React.ReactNode>)[selectedSubDivision]
+                  : (CONTENT_MAP[selectedDivision.path] as React.ReactNode)) || <p>Content is currently being updated by the Ministry of Foreign Affairs.</p>}
             </div>
 
             {currentContacts.length > 0 && (
@@ -257,7 +266,7 @@ function DivisionsContent() {
                     <Users size={20} className="text-yellow" />
                     CONTACT INFORMATION
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-y-12 gap-x-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-12 gap-x-4">
                   {currentContacts.map((contact, idx) => (
                     <ContactCard key={idx} {...contact} />
                   ))}

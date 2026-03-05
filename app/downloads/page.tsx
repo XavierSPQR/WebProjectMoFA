@@ -1,5 +1,4 @@
 import DownloadAccordion from '@/components/DownloadAccordion';
-import Link from 'next/link';
 
 const downloadItems = [
   {
@@ -26,9 +25,9 @@ const downloadItems = [
 
 export default function DownloadsPage() {
   return (
-    <main className="flex-grow p-8 container mx-auto">
+    <main className="flex-grow p-4 md:p-8 container mx-auto">
     
-      <h1 className="text-3xl font-bold text-navy mb-8 border-b-4 border-yellow inline-block">
+      <h1 className="text-2xl md:text-3xl font-bold text-navy mb-8 border-b-4 border-yellow inline-block">
         Downloads
       </h1>
 

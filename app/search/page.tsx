@@ -3,7 +3,7 @@
 import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { SEARCH_INDEX, SearchResult } from '@/lib/search-index';
+import { SEARCH_INDEX } from '@/lib/search-index';
 import { Search, ChevronRight } from 'lucide-react';
 
 const SearchResults = () => {
@@ -42,8 +42,8 @@ const SearchResults = () => {
       </nav>
 
       <div className="mb-12">
-        <h1 className="text-4xl font-extrabold text-navy tracking-tight mb-4 flex items-center gap-3">
-          <Search className="text-yellow w-8 h-8" />
+        <h1 className="text-2xl md:text-4xl font-extrabold text-navy tracking-tight mb-4 flex items-center gap-3">
+          <Search className="text-yellow w-6 h-6 md:w-8 md:h-8" />
           Search Results
         </h1>
         <p className="text-slate-600 text-lg">

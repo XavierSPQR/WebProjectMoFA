@@ -31,9 +31,9 @@ const CONTENT_MAP = [
 
 export default function MediaBriefingsPage() {
   // State to track which item IDs are expanded
-  const [expandedItems, setExpandedItems] = useState({});
+  const [expandedItems, setExpandedItems] = useState<Record<number, boolean>>({});
 
-  const toggleExpand = (id) => {
+  const toggleExpand = (id: number) => {
     setExpandedItems((prev) => ({
       ...prev,
       [id]: !prev[id],
