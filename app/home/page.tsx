@@ -108,7 +108,7 @@ export default function Home() {
   return (
     <main className="flex-1 bg-white">
       {/* Hero Slider */}
-      <section className="relative h-[500px] bg-gray-900 overflow-hidden">
+      <section className="relative h-[350px] md:h-[500px] bg-gray-900 overflow-hidden">
         {heroSlides.map((slide, index) => (
           <div
             key={index}
@@ -118,17 +118,17 @@ export default function Home() {
             <Image
               src={slide.image}
               alt={slide.title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#392F5A]/90 to-[#392F5A]/70" />
             <div className="relative h-full max-w-7xl mx-auto px-6 flex items-center">
               <div className="text-white max-w-3xl">
-                <h2 className="text-4xl font-bold mb-4 leading-tight">
+                <h2 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                   {slide.title}
                 </h2>
                 {slide.subtitle && (
-                  <p className="text-xl text-white/90">{slide.subtitle}</p>
+                  <p className="text-lg md:text-xl text-white/90">{slide.subtitle}</p>
                 )}
               </div>
             </div>
@@ -152,15 +152,15 @@ export default function Home() {
       </section>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
+        <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
           {/* Main Content - Featured News */}
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold text-[#392F5A] mb-6 border-b-4 border-[#F4D06F] pb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#392F5A] mb-6 border-b-4 border-[#F4D06F] pb-2">
               Latest News
             </h2>
 
-            <div className="max-h-[75vh] overflow-y-auto pr-4 custom-scrollbar">
+            <div className="md:max-h-[75vh] md:overflow-y-auto md:pr-4 custom-scrollbar">
               <div className="space-y-8">
                 {newsLoading && <p>Loading news...</p>}
                 {newsError && <p className="text-red-500">{newsError}</p>}

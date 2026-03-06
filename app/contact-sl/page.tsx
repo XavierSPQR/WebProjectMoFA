@@ -57,11 +57,11 @@ export default function ContactSLPage() {
     <main className="bg-[#fdfdfd] min-h-screen pb-12 text-black">
       <div className="container mx-auto px-4 py-8">
         {/* Page Title */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-navy mb-2">
+        <div className="text-center mb-8 md:mb-10">
+          <h1 className="text-2xl md:text-3xl font-bold text-navy mb-2">
             Contact Sri Lanka – Ministry of Foreign Affairs
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-base md:text-lg text-slate-600">
             Reach government services, consular support, and overseas assistance
           </p>
         </div>
@@ -174,13 +174,13 @@ export default function ContactSLPage() {
         </div>
 
         {/* Footer Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mt-8 md:mt-12">
 
           {/* Social Links */}
           <div className="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm flex flex-col items-center">
-            <h2 className="font-bold text-2xl mb-4 text-center text-navy">Get in Touch</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-4 text-center text-navy">Get in Touch</h2>
 
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
               <a
                 href="https://www.facebook.com/MFASriLanka"
                 target="_blank"
@@ -223,11 +223,11 @@ export default function ContactSLPage() {
 
           {/* Contact Details */}
           <div className="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm flex flex-col items-center">
-            <h2 className="font-bold text-2xl mb-4 text-center text-navy">Contact Details</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-4 text-center text-navy">Contact Details</h2>
             <ul className="space-y-2 text-center text-slate-600">
-              <li className="text-lg font-medium">+94 11 244 8500</li>
-              <li className="text-lg font-medium">info@mfa.gov.lk</li>
-              <li className="text-lg font-medium">Colombo 01, Sri Lanka</li>
+              <li className="text-base md:text-lg font-medium">+94 11 244 8500</li>
+              <li className="text-base md:text-lg font-medium">info@mfa.gov.lk</li>
+              <li className="text-base md:text-lg font-medium">Colombo 01, Sri Lanka</li>
             </ul>
           </div>
 

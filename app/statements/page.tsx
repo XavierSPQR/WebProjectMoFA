@@ -44,6 +44,7 @@ export default function StatementsPage() {
   const [error, setError] = useState<string | null>(null);
   const [selectedCat, setSelectedCat] = useState(categories[0]);
   const [isMissionExpanded, setIsMissionExpanded] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedSubCat, setSelectedSubCat] = useState(missionSubCategories[0]);
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
 
@@ -107,6 +108,7 @@ export default function StatementsPage() {
       if(!isMissionExpanded) setIsMissionExpanded(true);
     } else {
       setIsMissionExpanded(false);
+      setIsMobileMenuOpen(false);
     }
     setExpandedIds(new Set()); 
   };
@@ -119,15 +121,21 @@ export default function StatementsPage() {
   });
 
   return (
-    <main className="flex-grow p-6 md:p-10 container mx-auto bg-[#fdfdfd]">
-      <div className="flex flex-col lg:flex-row gap-10">
+    <main className="flex-grow p-4 md:p-10 container mx-auto bg-[#fdfdfd]">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
         <aside className="w-full lg:w-1/4">
           <div className="sticky top-8 bg-white border border-slate-200 rounded-3xl shadow-sm overflow-hidden">
-            <div className="p-6 bg-navy text-white flex items-center gap-3">
-              <FileText className="text-yellow" size={22} />
-              <h2 className="text-lg font-bold">Statements</h2>
-            </div>
-            <nav className="p-3 flex flex-col gap-1">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="w-full p-6 bg-navy text-white flex items-center justify-between lg:cursor-default"
+            >
+              <div className="flex items-center gap-3">
+                <FileText className="text-yellow" size={22} />
+                <h2 className="text-lg font-bold">Statements</h2>
+              </div>
+              <ChevronDown size={20} className={`lg:hidden transition-transform ${isMobileMenuOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <nav className={`p-3 flex-col gap-1 ${isMobileMenuOpen ? 'flex' : 'hidden lg:flex'}`}>
               {categories.map((cat) => (
                 <div key={cat.id}>
                   <button
@@ -147,7 +155,7 @@ export default function StatementsPage() {
                       {missionSubCategories.map((sub) => (
                         <button
                           key={sub}
-                          onClick={() => { setSelectedCat(cat); setSelectedSubCat(sub); }}
+                          onClick={() => { setSelectedCat(cat); setSelectedSubCat(sub); setIsMobileMenuOpen(false); }}
                           className={`text-left px-3 py-2 text-base rounded-lg ${selectedCat.id === 'mission' && selectedSubCat === sub ? 'text-navy font-bold bg-slate-100' : 'text-slate-500'}`}
                         >
                           {sub}
@@ -163,7 +171,7 @@ export default function StatementsPage() {
 
         <section className="w-full lg:w-3/4">
           <div className="mb-8">
-            <h1 className="text-4xl font-extrabold text-navy tracking-tight">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-navy tracking-tight">
               {selectedCat.id === 'mission' ? `${selectedSubCat} Mission` : selectedCat.name}
             </h1>
             <div className="h-1.5 w-24 bg-yellow mt-4 rounded-full"></div>
@@ -178,7 +186,7 @@ export default function StatementsPage() {
                 const isExpanded = expandedIds.has(item.id);
                 return (
                   <div key={item.id} className="bg-white rounded-[32px] shadow-sm border border-slate-100 overflow-hidden transition-all duration-300">
-                    <div className="p-8">
+                    <div className="p-6 md:p-8">
                       <div className="flex flex-col md:flex-row justify-between gap-4 mb-4">
                         <h3 className="text-xl md:text-2xl font-bold text-navy leading-tight">{item.title}</h3>
                         <div className="flex items-center gap-2 text-slate-400 bg-slate-50 px-3 py-1 rounded-full text-base h-fit whitespace-nowrap">
