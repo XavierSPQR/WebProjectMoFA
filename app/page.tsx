@@ -57,11 +57,11 @@ export default function Home() {
         </div>
 
         {/* 2. Central Ministry Identity Section (GRID FIX) */}
-        {/* We use a 3-column grid to prevent overlap: [Emblem] [Text] [Flag] */}
-        <div className="grid grid-cols-[60px_1fr_80px] sm:grid-cols-[100px_1fr_120px] md:grid-cols-[140px_1fr_160px] lg:grid-cols-[180px_1fr_220px] items-center w-full mb-16 gap-2 md:gap-6">
+        {/* Desktop: 3-column grid. Mobile: Stacked layout */}
+        <div className="flex flex-col md:grid md:grid-cols-[140px_1fr_160px] lg:grid-cols-[180px_1fr_220px] items-center w-full mb-12 md:mb-16 gap-6 md:gap-6">
           
-          {/* Left: National Emblem */}
-          <div className="relative aspect-square w-full drop-shadow-2xl">
+          {/* Top (Mobile) / Left (Desktop): National Emblem */}
+          <div className="relative aspect-square w-24 sm:w-32 md:w-full drop-shadow-2xl">
             <Image 
               src="/assets/logo.png" 
               alt="Sri Lanka National Emblem" 
@@ -71,20 +71,20 @@ export default function Home() {
           </div>
 
           {/* Center: Trilingual Title */}
-          <div className="flex flex-col items-center text-center space-y-1 md:space-y-3 drop-shadow-2xl min-w-0 px-2">
-            <p className="text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-semibold leading-tight md:whitespace-nowrap">
+          <div className="flex flex-col items-center text-center space-y-2 md:space-y-3 drop-shadow-2xl min-w-0 px-2 order-3 md:order-2">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight">
               විදේශ කටයුතු, විදේශ රැකියා සහ සංචාරක අමාත්‍යාංශය
             </p>
-            <p className="text-[10px] sm:text-sm md:text-lg lg:text-xl font-medium opacity-90 leading-tight md:whitespace-nowrap">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium opacity-90 leading-tight">
               வெளிநாட்டு அலுவல்கள், வெளிநாட்டு வேலைவாய்ப்பு மற்றும் சுற்றுலாத்துறை அமைச்சு
             </p>
-            <h2 className="text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-extrabold tracking-tighter uppercase leading-tight md:whitespace-nowrap">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold tracking-tighter uppercase leading-tight">
               Ministry of Foreign Affairs, Foreign Employment & Tourism
             </h2>
           </div>
 
-          {/* Right: National Flag */}
-          <div className="relative aspect-[2/1] w-full drop-shadow-2xl">
+          {/* Bottom (Mobile) / Right (Desktop): National Flag */}
+          <div className="relative aspect-[2/1] w-32 sm:w-40 md:w-full drop-shadow-2xl order-2 md:order-3">
             <Image 
               src="/assets/flag.png" 
               alt="Sri Lanka Flag" 
@@ -95,22 +95,22 @@ export default function Home() {
         </div>
 
         {/* 3. Department Portal Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 w-full max-w-5xl mb-12">
           {ministrySections.map((section, index) => (
             <Link 
               key={index} 
               href={section.link}
               className="group relative bg-white/95 hover:bg-white transition-all duration-500 
-                         rounded-tr-[40px] rounded-bl-[40px] border-b-[8px] border-blue-900 
+                         rounded-tr-[30px] rounded-bl-[30px] md:rounded-tr-[40px] md:rounded-bl-[40px] border-b-[6px] md:border-b-[8px] border-blue-900
                          p-6 md:p-10 lg:p-12 flex flex-col items-center justify-center text-blue-950 shadow-2xl 
                          hover:scale-105 active:scale-95"
             >
-              <div className="text-center space-y-2">
-                <p className="text-lg lg:text-2xl font-bold tracking-tight">{section.title_si}</p>
-                <p className="text-[10px] lg:text-sm font-semibold opacity-80 tracking-wide">{section.title_ta}</p>
-                <p className="text-base lg:text-xl font-black uppercase tracking-tighter pt-1 md:pt-2">{section.title_en}</p>
+              <div className="text-center space-y-1 md:space-y-2">
+                <p className="text-base sm:text-lg lg:text-2xl font-bold tracking-tight">{section.title_si}</p>
+                <p className="text-[10px] sm:text-xs lg:text-sm font-semibold opacity-80 tracking-wide">{section.title_ta}</p>
+                <p className="text-sm sm:text-base lg:text-xl font-black uppercase tracking-tighter pt-1 md:pt-2">{section.title_en}</p>
               </div>
-              <div className="absolute inset-2 rounded-tr-[32px] rounded-bl-[32px] border border-transparent 
+              <div className="absolute inset-2 rounded-tr-[24px] rounded-bl-[24px] md:rounded-tr-[32px] md:rounded-bl-[32px] border border-transparent
                               group-hover:border-blue-900/20 transition-all duration-500 pointer-events-none" />
             </Link>
           ))}
