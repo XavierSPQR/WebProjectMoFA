@@ -3,7 +3,7 @@
 import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { SEARCH_INDEX, SearchResult } from '@/lib/search-index';
+import { SEARCH_INDEX } from '@/lib/search-index';
 import { Search, ChevronRight } from 'lucide-react';
 
 const SearchResults = () => {
