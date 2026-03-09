@@ -1,5 +1,4 @@
 import DownloadAccordion from '@/components/DownloadAccordion';
-import Link from 'next/link';
 
 //title with the resourses
 const downloadItems = [

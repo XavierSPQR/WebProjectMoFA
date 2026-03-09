@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 
 // Define the TypeScript interface for a Publication
 interface Publication {

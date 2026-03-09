@@ -14,34 +14,44 @@ const notoSansTamil = Noto_Sans_Tamil({
 
 const Header = () => {
   return (
-    <header className="bg-[#9DD9D2] text-gray-900 p-4 flex items-center justify-between">
+    <header className="bg-[#9DD9D2] text-gray-900 p-4 flex flex-col md:flex-row items-center justify-between gap-4">
       
-      {/* Logo */}
-      <div className="flex items-center justify-center w-24 h-24">
-        <Image
-          src="/assets/logo.png"
-          alt="Sri Lanka Logo"
-          width={80}
-          height={80}
-          className="object-contain"
-        />
+      {/* Logo and Mobile Title */}
+      <div className="flex items-center justify-between w-full md:w-auto">
+        <div className="flex items-center justify-center w-16 h-16 md:w-24 md:h-24">
+          <Image
+            src="/assets/logo.png"
+            alt="Sri Lanka Logo"
+            width={80}
+            height={80}
+            className="object-contain"
+          />
+        </div>
+
+        {/* Mobile-only simplified title */}
+        <div className="md:hidden text-right flex-1 ml-4">
+          <h1 className="text-sm font-bold leading-tight">
+            Ministry of Foreign Affairs, <br />
+            Foreign Employment & Tourism
+          </h1>
+        </div>
       </div>
 
-      {/* Center Titles */}
-      <div className="text-center flex-1 mx-4">
-        <h1 className={`text-2xl ${abhayaLibre.className}`}>
+      {/* Center Titles - Hidden on mobile, visible on md and up */}
+      <div className="hidden md:block text-center flex-1 mx-4">
+        <h1 className={`text-xl lg:text-2xl ${abhayaLibre.className}`}>
           විදේශ කටයුතු , විදේශ රැකියා සහ සංචාරක අමාත්‍යාංශය
         </h1>
-        <h2 className={`text-lg ${notoSansTamil.className}`}>
+        <h2 className={`text-base lg:text-lg ${notoSansTamil.className}`}>
           வெளிநாட்டு அலுவல்கள், வெளிநாட்டு வேலைவாய்ப்பு மற்றும் சுற்றுலாத்துறை அமைச்சு
         </h2>
-        <h3 className="text-xl font-bold">
+        <h3 className="text-lg lg:text-xl font-bold">
           Ministry of Foreign Affairs, Foreign Employment & Tourism
         </h3>
       </div>
 
-      {/* Flag */}
-      <div className="flex items-center justify-center">
+      {/* Flag - Hidden on mobile */}
+      <div className="hidden md:flex items-center justify-center">
         <Image
           src="/assets/flag.png"
           alt="Sri Lanka Flag"

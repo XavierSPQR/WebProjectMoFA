@@ -11,14 +11,14 @@ const CONTENT_MAP = [
     id: 1,
     title: "Media Briefing on Foreign Minister Gunawardena appreciates support of countries at UNHRC",
     summary: "Foreign Minister Dinesh Gunawardena held a media conference at the Foreign Ministry today, 23 March 2021...",
-    fullContent: "The Foreign Minister appreciated the support extended by member states during the UNHRC sessions in Geneva. He highlighted the importance of sovereignty and the constructive engagement of the international community in Sri Lanka's domestic processes. Further discussions were held regarding the upcoming resolutions and the country's strategic position on human rights benchmarks.",
+    fullContent: "The Foreign Minister appreciated the support extended by member states during the UNHRC sessions in Geneva. He highlighted the importance of sovereignty and the constructive engagement of the international community in Sri Lanka&apos;s domestic processes. Further discussions were held regarding the upcoming resolutions and the country&apos;s strategic position on human rights benchmarks.",
     date: "23.03.2021",
   },
   {
     id: 2,
     title: "Media Briefing on Hon. Dinesh Gunawardena following Bilateral Talks with India",
     summary: "Media Briefing by Hon. Dinesh Gunawardena following his Bilateral Talks with the visiting Indian Minister of External Affairs...",
-    fullContent: "The discussion focused on enhancing bilateral cooperation in sectors such as energy, IT, and agriculture. Dr. S. Jaishankar reaffirmed India's commitment to the 'Neighborhood First' policy, while Minister Gunawardena expressed gratitude for the ongoing vaccine support and developmental projects facilitated by the Indian government.",
+    fullContent: "The discussion focused on enhancing bilateral cooperation in sectors such as energy, IT, and agriculture. Dr. S. Jaishankar reaffirmed India&apos;s commitment to the &apos;Neighborhood First&apos; policy, while Minister Gunawardena expressed gratitude for the ongoing vaccine support and developmental projects facilitated by the Indian government.",
     date: "06.01.2021",
   },
   {
@@ -71,7 +71,7 @@ const CONTENT_MAP = [
   <p>
     In this context, the question of shifting Sri Lanka’s Embassy, does not arise.
   </p><br></br>
-  <p> Text of Ministry Response was published in The Sunday Times Newspaper on Sunday, 10 December 2017 in article "Jerusalem Crisis: Lankan Embassy will remain in Tel Aviv</p>
+  <p> Text of Ministry Response was published in The Sunday Times Newspaper on Sunday, 10 December 2017 in article &quot;Jerusalem Crisis: Lankan Embassy will remain in Tel Aviv&quot;</p>
   <a
   href=" http://www.sundaytimes.lk/171210/news/jerusalem-crisis-lankan-embassy-will-remain-in-tel-aviv-272462.html"
   target="_blank"
@@ -150,9 +150,9 @@ const CONTENT_MAP = [
       <br />
       <h3>Answer:</h3>
       <br />
-      <p>As you would recall, the 100 Day Programme 'United for a Change. Dawn of Maithri Rule. A New Country in 100 Days', in point 93, stated the following:</p>
+      <p>As you would recall, the 100 Day Programme &apos;United for a Change. Dawn of Maithri Rule. A New Country in 100 Days&apos;, in point 93, stated the following:</p>
       <br /><br />
-      <p>"Since Sri Lanka is not a signatory to the Rome Statute regarding international jurisdiction with regard to war crimes, ensuring justice with regard to such matters will be the business of <b>national independent judicial mechanisms</b>."</p>
+      <p>&quot;Since Sri Lanka is not a signatory to the Rome Statute regarding international jurisdiction with regard to war crimes, ensuring justice with regard to such matters will be the business of <b>national independent judicial mechanisms</b>.&quot;</p>
        <br />
        <p>What this means is that the new Government of Sri Lanka pledged to re-assert lost sovereignty by taking ownership of processes that were in the international domain, by bringing them to the local domain, and that the Government of Sri Lanka, as a sovereign state that is responsible for all its citizens, and responsible to uphold the rule of law, democracy, and justice, would take responsibility for credible investigations, locally (by this time, as you would recall, there was already an international investigation on Sri Lanka by the OHCHR Investigation on Sri Lanka (OISL), set up by Resolution 25/1 of March 2014).</p>
        <br />
@@ -163,16 +163,16 @@ const CONTENT_MAP = [
        <p>This country has seen violence many times - for example in 1971, and also during the period between 1987 and 1989 when civilians died and went missing in the south. Once again, after the end of the conflict in May 2009, certain incidents took place in the south, such as the Welikada Prison incident, shooting at protesters in Rathupaswala and in the Katunayake Free Trade Zone. And today,  there are attempts  once again to  instigate violence in the south by branding people as traitors and trying to create divisions in society. These indicate,  whatever community one belongs to, one cannot be guaranteed of safety. All communities have been affected by violence at some point or the other in this country.</p>
        <br />
        <p>Therefore, systems that restore trust in investigations and judicial processes, and systems that strengthen individual rights  will benefit all communities and also enhance social trust over the long-term. This is what the Government seeks to carry out, for the benefit of all citizens,  present and future, in the interest of long-term stability and prosperity of the nation.</p>
-       <p>As The Island of 27 October 2017 carried the response of the Spokesperson under a misleading title that read <b>Govt won’t act on Lord Naseby’s statement</b>, 
+       <p>As The Island of 27 October 2017 carried the response of the Spokesperson under a misleading title that read <b>Govt won&apos;t act on Lord Naseby&apos;s statement</b>,
         <a href="http://www.island.lk/index.php?page_cat=article-details&page=article-details&code_title=173955"  style={{ color: "blue" }}>
            (http://www.island.lk/index.php?page_cat=article-details&page=article-details&code_title=173955), 
         </a>
          the following response was sent to The Island on 27 October 2017:
        </p>
       <br />
-      <p>“As you are aware, the statement by the Ministry was in response to a question raised by The Island. We regret that the title of the news report - 'Govt won't act on Lord Naseby's statement' - does not accurately reflect the spirit or the substance of the statement/ response by the Ministry.</p>
+      <p>&ldquo;As you are aware, the statement by the Ministry was in response to a question raised by The Island. We regret that the title of the news report - &apos;Govt won&apos;t act on Lord Naseby&apos;s statement&apos; - does not accurately reflect the spirit or the substance of the statement/ response by the Ministry.</p>
       <br /><br />
-      <p>With regard to Lord Naseby's statement, the Government fully recognizes its contribution to the Transitional Justice/ Reconciliation process in Sri Lanka.”</p>
+      <p>With regard to Lord Naseby&apos;s statement, the Government fully recognizes its contribution to the Transitional Justice/ Reconciliation process in Sri Lanka.&rdquo;</p>
     </div>
    
    

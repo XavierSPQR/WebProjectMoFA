@@ -58,10 +58,10 @@ export default function ContactSLPage() {
       <div className="container mx-auto px-4 py-8">
         {/* Page Title */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-navy mb-2">
+          <h1 className="text-2xl md:text-3xl font-bold text-navy mb-2">
             Contact Sri Lanka – Ministry of Foreign Affairs
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-base md:text-lg text-slate-600">
             Reach government services, consular support, and overseas assistance
           </p>
         </div>
@@ -70,23 +70,23 @@ export default function ContactSLPage() {
           {/* LEFT COLUMN */}
           <div className="flex flex-col gap-6">
             {/* Contact Portal */}
-            <div className="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm flex flex-col items-center text-center">
+            <div className="bg-white border border-slate-200 p-6 md:p-8 rounded-2xl shadow-sm flex flex-col items-center text-center">
               <div className="w-16 h-16 bg-navy mb-4 flex items-center justify-center rounded-full shadow-sm">
                 <Globe className="w-8 h-8 text-yellow" />
               </div>
 
-              <h2 className="text-2xl font-bold mb-6 text-navy">
+              <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-navy">
                 Contact Sri Lanka Portal
               </h2>
 
-              <ul className="text-left space-y-3 mb-8 text-lg font-medium text-slate-600">
+              <ul className="text-left space-y-2 md:space-y-3 mb-6 md:mb-8 text-base md:text-lg font-medium text-slate-600">
                 <li>• Submit an Inquiry</li>
                 <li>• Track Inquiry Status</li>
                 <li>• Emergency Assistance</li>
                 <li>• Request Information</li>
               </ul>
 
-              <button className="bg-navy text-white px-10 py-2.5 rounded-lg font-bold hover:bg-blue-900 transition">
+              <button className="bg-navy text-white px-8 md:px-10 py-2.5 rounded-lg font-bold hover:bg-blue-900 transition w-full md:w-auto">
                 LEARN MORE
               </button>
             </div>
@@ -106,12 +106,12 @@ export default function ContactSLPage() {
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm flex flex-col">
-            <div className="flex flex-col items-center text-center mb-8">
+          <div className="bg-white border border-slate-200 p-6 md:p-8 rounded-2xl shadow-sm flex flex-col">
+            <div className="flex flex-col items-center text-center mb-6 md:mb-8">
               <div className="w-16 h-16 bg-navy mb-4 flex items-center justify-center rounded-full shadow-sm">
                 <ClipboardList className="w-8 h-8 text-yellow" />
               </div>
-              <h2 className="text-2xl font-bold text-navy">
+              <h2 className="text-xl md:text-2xl font-bold text-navy">
                 Mission Registrations
               </h2>
             </div>
@@ -163,7 +163,7 @@ export default function ContactSLPage() {
               <div className="pt-4 flex justify-center">
                 <button
                   type="submit"
-                  className="bg-yellow text-navy px-14 py-3 rounded-lg font-bold hover:bg-amber-400 transition"
+                  className="bg-yellow text-navy px-10 md:px-14 py-3 rounded-lg font-bold hover:bg-amber-400 transition w-full md:w-auto"
                 >
                   REGISTER
                 </button>
@@ -178,17 +178,17 @@ export default function ContactSLPage() {
 
           {/* Social Links */}
           <div className="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm flex flex-col items-center">
-            <h2 className="font-bold text-2xl mb-4 text-center text-navy">Get in Touch</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-4 text-center text-navy">Get in Touch</h2>
 
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
               <a
                 href="https://www.facebook.com/MFASriLanka"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-1 text-slate-600 hover:text-blue-600 transition"
               >
-                <Facebook className="w-10 h-10" />
-                <span className="text-lg font-medium">Facebook</span>
+                <Facebook className="w-8 h-8 md:w-10 md:h-10" />
+                <span className="text-base md:text-lg font-medium">Facebook</span>
               </a>
 
               <a
@@ -197,16 +197,16 @@ export default function ContactSLPage() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-1 text-slate-600 hover:text-red-600 transition"
               >
-                <Youtube className="w-10 h-10" />
-                <span className="text-lg font-medium">YouTube</span>
+                <Youtube className="w-8 h-8 md:w-10 md:h-10" />
+                <span className="text-base md:text-lg font-medium">YouTube</span>
               </a>
 
               <a
                 href="mailto:info@mfa.gov.lk"
                 className="flex flex-col items-center gap-1 text-slate-600 hover:text-green-600 transition"
               >
-                <Mail className="w-10 h-10" />
-                <span className="text-lg font-medium">Email</span>
+                <Mail className="w-8 h-8 md:w-10 md:h-10" />
+                <span className="text-base md:text-lg font-medium">Email</span>
               </a>
 
               <a
@@ -215,30 +215,24 @@ export default function ContactSLPage() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-1 text-slate-600 hover:text-blue-700 transition"
               >
-                <Linkedin className="w-10 h-10" />
-                <span className="text-lg font-medium">LinkedIn</span>
+                <Linkedin className="w-8 h-8 md:w-10 md:h-10" />
+                <span className="text-base md:text-lg font-medium">LinkedIn</span>
               </a>
             </div>
           </div>
 
           {/* Contact Details */}
           <div className="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm flex flex-col items-center">
-            <h2 className="font-bold text-2xl mb-4 text-center text-navy">Contact Details</h2>
+            <h2 className="font-bold text-xl md:text-2xl mb-4 text-center text-navy">Contact Details</h2>
             <ul className="space-y-2 text-center text-slate-600">
-              <li className="text-lg font-medium">+94 11 244 8500</li>
-              <li className="text-lg font-medium">info@mfa.gov.lk</li>
-              <li className="text-lg font-medium">Colombo 01, Sri Lanka</li>
+              <li className="text-base md:text-lg font-medium">+94 11 244 8500</li>
+              <li className="text-base md:text-lg font-medium">info@mfa.gov.lk</li>
+              <li className="text-base md:text-lg font-medium">Colombo 01, Sri Lanka</li>
             </ul>
           </div>
 
         </div>
       </div>
-       <style jsx global>{`
-        .text-navy { color: #002B5B; }
-        .bg-navy { background-color: #002B5B; }
-        .text-yellow { color: #FFCC00; }
-        .bg-yellow { background-color: #FFCC00; }
-      `}</style>
     </main>
   );
 }

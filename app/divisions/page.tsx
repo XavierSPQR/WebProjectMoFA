@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useState } from 'react';
 import { 
   ChevronDown, Building2, User, 
   Users 
@@ -65,7 +64,7 @@ const bilateralSubDivisions = [
 
 // Maps to either the division 'path' or the sub-division 'name'
 
-const CONTACTS_MAP: Record<string, any[]> = {
+const CONTACTS_MAP: Record<string, { role: string; name?: string; email?: string; phone?: string; fax?: string; ext?: string }[]> = {
 
   // Bilateral Sub-Divisions
 
@@ -1165,7 +1164,7 @@ const CONTACTS_MAP: Record<string, any[]> = {
 };
 
 
-const CONTENT_MAP: Record<string, any> = {
+const CONTENT_MAP: Record<string, Record<string, React.ReactNode> | React.ReactNode> = {
 
     'bilateral-affairs': {
 
@@ -1259,7 +1258,7 @@ Sri Lanka has 6 resident Missions in the region. (Egypt, South Africa, Nigeria, 
 
 <p>Sri Lanka Embassy in Iran is concurrently accredited to Azerbaijan and Turkmenistan.</p>
 
-<p>The Division also coordinates with 08 Middle Eastern Embassies in Colombo (Iran, Iraq, Kuwait, Oman, Palestine, Qatar, Saudi Arabia and United Arab Emirates) and 06 Middle Eastern Embassies in New Delhi (Lebanon, Jordan, Israel, Syria, Yemen, Bahrain)
+<p>The Division also coordinates with 08 Middle Eastern Embassies in Colombo (Iran, Iraq, Kuwait, Oman, Palestine, Qatar, Saudi Arabia and United Arab Emirates) and 06 Middle Eastern Embassies in New Delhi (Lebanon, Jordan, Israel, Syria, Yemen, Baron)
 There are 03 Honorary Consul representations from Middle Eastern region in Colombo (Israel, Jordan and Yemen)</p>
 
           </div>
@@ -1696,31 +1695,32 @@ There are 03 Honorary Consul representations from Middle Eastern region in Colom
 
 const ContactCard = ({ role, name, email, phone }: { role: string; name: string; email: string; phone: string }) => (
 
-  <div className="flex flex-col items-center text-center group min-w-[180px]">
+  <div className="flex flex-col items-center text-center group min-w-[140px] md:min-w-[180px]">
 
-    <div className="w-24 h-24 rounded-full bg-slate-50 border-[6px] border-[#97D8D8] flex items-center justify-center mb-4 shadow-sm">
+    <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-slate-50 border-[4px] md:border-[6px] border-[#97D8D8] flex items-center justify-center mb-2 md:mb-4 shadow-sm">
 
       <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
 
-        <User size={44} className="text-[#97D8D8]" />
+        <User size={24} className="text-[#97D8D8] md:hidden" />
+        <User size={44} className="text-[#97D8D8] hidden md:block" />
 
       </div>
 
     </div>
 
-    <h4 className="text-[#002B5B] font-bold text-sm mb-1 uppercase tracking-tight h-10 flex items-center">
+    <h4 className="text-[#002B5B] font-bold text-[10px] md:text-sm mb-1 uppercase tracking-tight h-8 md:h-10 flex items-center leading-tight">
 
       {role}
 
     </h4>
 
-    <p className="text-slate-600 text-xs mb-2 font-medium">{name}</p>
+    <p className="text-slate-600 text-[10px] md:text-xs mb-1 md:mb-2 font-medium">{name}</p>
 
     <div className="flex flex-col items-center">
 
-      <span className="text-blue-500 text-[10px] lowercase mb-1 cursor-pointer hover:underline">{email}</span>
+      <span className="text-blue-500 text-[8px] md:text-[10px] lowercase mb-0.5 md:mb-1 cursor-pointer hover:underline break-all px-1">{email}</span>
 
-      <span className="text-slate-500 text-[10px] font-semibold">{phone}</span>
+      <span className="text-slate-500 text-[8px] md:text-[10px] font-semibold">{phone}</span>
 
     </div>
 
@@ -1737,6 +1737,8 @@ export default function DivisionsPage() {
 
   const [selectedSubDivision, setSelectedSubDivision] = useState(bilateralSubDivisions[0]);
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
 
   const handleDivisionClick = (division: typeof divisions[0]) => {
 
@@ -1746,6 +1748,8 @@ export default function DivisionsPage() {
 
       setIsBilateralExpanded(!isBilateralExpanded);
 
+    } else {
+      setIsSidebarOpen(false);
     }
 
   };
@@ -1757,6 +1761,8 @@ export default function DivisionsPage() {
 
     setSelectedSubDivision(sub);
 
+    setIsSidebarOpen(false);
+
   };
 
 
@@ -1767,17 +1773,31 @@ export default function DivisionsPage() {
 
   return (
 
-    <main className="flex-grow p-6 md:p-10 container mx-auto bg-[#fdfdfd]">
+    <main className="flex-grow p-4 md:p-10 container mx-auto bg-[#fdfdfd]">
 
-      <div className="flex flex-col lg:flex-row gap-10">
+      {/* Mobile Sidebar Toggle */}
+      <div className="lg:hidden mb-4">
+        <button
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="w-full flex items-center justify-between bg-navy text-white p-4 rounded-xl shadow-md"
+        >
+          <div className="flex items-center gap-3">
+            <Building2 className="text-yellow" size={20} />
+            <span className="font-bold text-sm md:text-base">MFA Directory</span>
+          </div>
+          <ChevronDown size={20} className={isSidebarOpen ? 'rotate-180 transition-transform' : 'transition-transform'} />
+        </button>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-6 md:gap-10">
 
         {/* Sidebar */}
 
-        <aside className="w-full lg:w-1/4">
+        <aside className={`w-full lg:w-1/4 ${isSidebarOpen ? 'block' : 'hidden lg:block'}`}>
 
-          <div className="sticky top-8 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+          <div className="lg:sticky lg:top-8 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
 
-            <div className="p-5 bg-navy text-white flex items-center gap-3">
+            <div className="hidden lg:flex p-5 bg-navy text-white items-center gap-3">
 
               <Building2 className="text-yellow" size={24} />
 
@@ -1785,7 +1805,7 @@ export default function DivisionsPage() {
 
             </div>
 
-            <nav className="p-2 flex flex-col gap-1 max-h-[70vh] overflow-y-auto custom-scrollbar">
+            <nav className="p-2 flex flex-col gap-1 max-h-[60vh] lg:max-h-[70vh] overflow-y-auto custom-scrollbar">
 
               {divisions.map((division) => (
 
@@ -1803,7 +1823,7 @@ export default function DivisionsPage() {
 
                   >
 
-                    <span className="text-base">{division.name}</span>
+                    <span className="text-sm md:text-base">{division.name}</span>
 
                     {division.path === 'bilateral-affairs' && <ChevronDown size={14} className={isBilateralExpanded ? 'rotate-180' : ''} />}
 
@@ -1821,7 +1841,7 @@ export default function DivisionsPage() {
 
                           onClick={() => handleSubDivisionClick(sub)}
 
-                          className={`text-left px-3 py-2 text-base rounded-lg transition-all ${
+                          className={`text-left px-3 py-2 text-sm md:text-base rounded-lg transition-all ${
 
                             selectedDivision.path === 'bilateral-affairs' && selectedSubDivision === sub ? 'bg-navy text-white font-medium' : 'text-slate-500 hover:bg-slate-100'
 
@@ -1854,22 +1874,22 @@ export default function DivisionsPage() {
 
         <section className="w-full lg:w-3/4">
 
-          <div className="mb-8">
+          <div className="mb-6 md:mb-8">
 
-            <h1 className="text-4xl font-extrabold text-navy tracking-tight">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-navy tracking-tight">
 
               {selectedDivision.path === 'bilateral-affairs' ? selectedSubDivision : selectedDivision.name}
 
             </h1>
 
-            <div className="h-1.5 w-20 bg-yellow mt-4 rounded-full"></div>
+            <div className="h-1.5 w-16 md:w-20 bg-yellow mt-3 md:mt-4 rounded-full"></div>
 
           </div>
 
 
-          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-100 min-h-[600px]">
+          <div className="bg-white p-6 md:p-12 rounded-2xl md:rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-100 min-h-[400px] md:min-h-[600px]">
 
-            <div className="text-slate-700 leading-relaxed text-lg mb-16">
+            <div className="text-slate-700 leading-relaxed text-base md:text-lg mb-12 md:mb-16">
 
                 {(selectedDivision.path === 'bilateral-affairs' ? CONTENT_MAP['bilateral-affairs'][selectedSubDivision] : CONTENT_MAP[selectedDivision.path]) || <p>Content is being updated for this division.</p>}
 
@@ -1882,7 +1902,7 @@ export default function DivisionsPage() {
 
               <div className="pt-10 border-t border-slate-100">
 
-                <h3 className="text-xl font-bold text-navy mb-12 flex items-center gap-2">
+                <h3 className="text-lg md:text-xl font-bold text-navy mb-8 md:mb-12 flex items-center gap-2">
 
                     <Users size={20} className="text-yellow" />
 
@@ -1890,7 +1910,7 @@ export default function DivisionsPage() {
 
                 </h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-y-12 gap-x-4">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-y-8 md:gap-y-12 gap-x-2 md:gap-x-4">
 
                   {currentContacts.map((contact, idx) => (
 
@@ -1916,14 +1936,6 @@ export default function DivisionsPage() {
         .custom-scrollbar::-webkit-scrollbar { width: 5px; }
 
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
-
-        .text-navy { color: #002B5B; }
-
-        .bg-navy { background-color: #002B5B; }
-
-        .text-yellow { color: #FFCC00; }
-
-        .bg-yellow { background-color: #FFCC00; }
 
       `}</style>
 
